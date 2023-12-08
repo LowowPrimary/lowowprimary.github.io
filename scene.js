@@ -189,6 +189,7 @@ alert("start");
 	
   BABYLON.SceneLoader.ImportMeshAsync("", modelDirectory, "realmap.glb", scene, (meshes) => {
 	  //meshes[0].whatever = whatever
+	  
   });
 
     
