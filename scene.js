@@ -547,7 +547,7 @@ let createScene = function(canvas, engine) {
 	}
 	*/	
 	
-  BABYLON.SceneLoader.ImportMeshAsync("", modelDirectory, "realMap.glb", scene, (meshes) => {
+  BABYLON.SceneLoader.ImportMeshAsync("", modelDirectory, "realmap.glb", scene, (meshes) => {
     alert("ey");
     //alert(meshes);
     for (let [key, value] of Object.entries(meshes)) {
