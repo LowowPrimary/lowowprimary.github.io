@@ -1,0 +1,193 @@
+/* CSS Document */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+@keyframes fadeIn { 
+    0% {
+        opacity: 1; 
+        display: flex;
+    } 
+    100% { 
+        opacity: 0;
+        display: none;
+    } 
+} 
+
+body, html{
+    background-color: gray;/*#211F47;*/
+    /*padding: 20px;*/
+	width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+    position: absolute;
+}
+
+*{
+  font-family: "Poppins";
+}
+
+#canvas {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  background: black;
+  position: absolute;
+  display: none;
+}
+#runButton {
+    background-color: gray;
+    min-width: 100%;
+    min-height: 100%;
+    align-self: baseline;
+    outline: 10px solid black;
+    border-radius: 10px
+}
+#runButton:hover {
+    transform: scale(1.03);
+    transition-duration: .3s;
+}
+
+#blank {
+    background-blend-mode: overlay;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: fadeIn 1s;
+    opacity: 0%;
+}
+
+
+#buttonTest {
+    background-color: gray;
+}
+
+/* Header */
+#headerBackground {
+	padding: 20px;
+	background-color: #606060;
+	width: 100%;
+	height: 13%;
+	display: flex;
+	justify-content: center;
+	outline: 20px solid black;
+}
+#headerDiv {
+    background-color: gray;
+    display: flex;
+    flex-direction: row;
+	outline: 30px solid black;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 150px;
+    width: 90%;
+	height: 80%;
+    align-self: center;
+}
+#headerDiv:hover {
+    transform: scale(1.03);
+    transition-duration: .3s;
+}
+#headerDiv:not(:hover) {
+    transform: scale(1);
+    transition-duration: .3s;
+}
+
+#headerText {
+    align-self: center;
+    font-size: 700%;
+}
+
+
+/* Page Selections */
+#pageSelection {
+    height: 70%;
+    min-width: 10%;
+    margin: auto;
+    margin-right: 0;
+	text-align: center;
+    font-size: 300%; /*3.5vw-20px*/
+}
+.selection {
+    outline: 15px solid black;
+    background-color: gray;
+    border-radius: 5%;
+    font-size: 150%;
+}
+.selection:hover {
+  transition-duration: .3s;
+  transform: scale(1.1);
+}
+.selection:not(:hover) {
+    transform: scale(1);
+    transition-duration: .3s;
+}
+
+
+
+
+/* Pages & Subpages */
+#pagesParent {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+/* Main Page */
+#main {
+    display: flex;
+    flex-direction: column;
+    font-size: 200%;
+    width: 100%;
+    height: 100%;
+}
+
+#firstImpression {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+}
+
+#DPI {
+    display: flex;
+    flex-direction: column;
+    outline: 20px solid black;
+    width: 40%;
+    scroll-behavior: auto;
+    overflow: hidden;
+}
+
+#testImg {
+    border-radius: 10px;
+	opacity: 20%;
+    width: 40%;
+    height: 40%;
+}
+
+#testImg2 {
+    border-radius: 10px;
+    opacity: 20%;
+    width: 40%;
+    height: 40%;
+}
+
+
+#GD {
+    display: flex;
+    flex-direction: column;
+    outline: 20px solid black;
+    width: 40%;
+    overflow: hidden;
+}
+
+
+#a {}
+#b {}
+#c {}
