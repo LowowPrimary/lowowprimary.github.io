@@ -185,25 +185,12 @@ let createScene = function(canvas, engine) {
 	
 	
 
-	alert("start");
-/*
+alert("start");
+	
   BABYLON.SceneLoader.ImportMeshAsync("", modelDirectory, "realmap.glb", scene, (meshes) => {
-    alert("ey");
-    //alert(meshes);
-    for (let [key, value] of Object.entries(meshes)) {
-      console.log(key + " " + value);
-    }
-    alert("really?");
-    console.log(meshes[0].scaling);
-    //meshes.scaling = new BABYLON.Vector3(0.25, 0.25, 0.25);
-    meshes[0].position.x = 10;
-    meshes[0].position.z = 30;
-    alert("position changed");
-	 // newMeshes[0].position.x = -20;
-
-    alert("HUHH");
+	  //meshes[0].whatever = whatever
   });
-*/
+
     
   return scene;
 };
