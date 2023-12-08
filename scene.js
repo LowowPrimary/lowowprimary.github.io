@@ -46,26 +46,8 @@ let createScene = function(canvas, engine) {
 
   ////   CAMERA   ////
 
-  // cycle through map and find p (player spawn)
-	
-    var pSpawnX;
-    var pSpawnY;
-    var pSpawnHeight;
-    for (let [key, value] of Object.entries(map)) {
-        let currFloor = value["Map"];
-
-        for (let y = 0; y < currFloor.length; y++) {
-
-            if (currFloor[y].indexOf("p") != "-1") {
-                pSpawnX = currFloor[y].indexOf("p");
-                pSpawnY = y;
-            pSpawnHeight = (value["Height"] * 5) + 2;
-            };
-        };
-    };
-
     // actual creation
-    const camera = new BABYLON.UniversalCamera("UniversalCamera", new BABYLON.Vector3(pSpawnX, pSpawnHeight, pSpawnY), scene);
+    const camera = new BABYLON.UniversalCamera("UniversalCamera", new BABYLON.Vector3(30, 20, 30), scene);
 	
     //const camera = new BABYLON.UniversalCamera("UniversalCamera", new BABYLON.Vector3(pSpawnX, pSpawnHeight, pSpawnY), scene);
     camera.attachControl(canvas, true);
