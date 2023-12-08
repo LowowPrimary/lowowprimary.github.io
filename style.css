@@ -166,14 +166,14 @@ body, html{
 
 #testImg {
     border-radius: 10px;
-	opacity: 20%;
+    opacity: 100%;
     width: 40%;
     height: 40%;
 }
 
 #testImg2 {
     border-radius: 10px;
-    opacity: 20%;
+    opacity: 100%;
     width: 40%;
     height: 40%;
 }
