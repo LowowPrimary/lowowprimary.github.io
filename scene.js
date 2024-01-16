@@ -131,17 +131,15 @@ let createGameScene = function(canvas, engine) {
 
 
   var button = BABYLON.MeshBuilder.CreateBox("button", {size: 1}, scene);
-  button.position = new BABYLON.Vector3(pSpawnX, 10, pSpawnY);
+  button.position = new BABYLON.Vector3(30, 10, 30);
 
   var clickMaterial = new BABYLON.StandardMaterial("material", scene);
-  clickMaterial.diffuseTexture = new BABYLON.Texture("./Assets/click.png", scene);
+  clickMaterial.diffuseTexture = new BABYLON.Texture("./Assets/GD/DesignElementInfographic.jpg", scene);
   clickMaterial.scale = .5;
 
 
   button.actionManager = new BABYLON.ActionManager(scene);
   button.material = clickMaterial;
-
-
 
 
   // THE ANIMATION THAT I CUT THE CODE FROM
