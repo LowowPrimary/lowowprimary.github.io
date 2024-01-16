@@ -16,89 +16,193 @@
 
 <body>
     
-    <canvas id="canvas"></canvas>
+	<canvas id="canvas"></canvas>
         
     
-    <img src="Assets/BlankBlack.png" id="blank"> </img>
+
+
+	<div id="headline"> 
+	
+	    
+	    <div id="headlineMenu">
+	      <div id="dropdown">&#9776;</div>
+	      <div id="options">
+	        <button class="select">About Me</button>
+	        <button class="select">Resume</button>
+	        <button class="select">Gallery Walk</button>
+	      </div>
+	    </div>
+	      
+	  </div>
+	
+	
+	  <div id="menu">
+	    <div id="Title">
+	      <h1 id="titleName" style="mix-blend-mode: difference; color: white">Satraj Singh's</h1>
+	      <h2>Portfolio</h2>
+	    </div>
+	  
+	    <img id="background" src="./Assets/bg.jpg"> </img>
+	    
+	    <div id="DPI">
+	      <div id="DPIMainPage" class="tContainer">
+	        <div class="mixBlendMode">
+	          <p> Digital Photography </p>
+	        </div>
+	      </div>
+	      <img id="DPICover" class="cover" src="./Assets/DPIFirstImpression.jpg"> </img>
+	    </div>
+	    
+	  
+	    <div id="GP">
+	      <div id="GDMainPage" class="tContainer">
+	        <div class="mixBlendMode">
+	          <p> Graphic Design </p>
+	        </div>
+	      </div>
+	      <img id="GDCover" class="cover" src="./Assets/GDFirstImpression.png"> </img>
+	    </div>
+	  </div>
+	
+	
+	  <div id="DPIPage">
+	    <h1 class="headlineText">Digital Photography 1</h1>
+	  </div>
+	  
+	  <div id="DPIImages" style="display: none;"> 
+	
+	    <div class="DPIIwT">
+	      <div class="carousel">
+	
+	        <button id="prevBtn" class="carouselButton"></button>
+	        <img src="./Assets/DP/carousel1.jpg" class="carouselObj"/>
+	        <img src="./Assets/DP/carousel2.jpg" class="carouselObj"/>
+	        <img src="./Assets/DP/carousel3.jpg" class="carouselObj"/>
+	        <button id="nextBtn" class="carouselButton"></button>
+	
+	        <h1 class="carouselIndex">asdf</h1>
+	      </div>
+	      
+	      <div class="DPIText">
+	        <p>The Abstract Alphabet project was the first one assigned in Photography. It was about finding an object that matched with each letter of the alphabet, and the interpretation of that was up to you. I chose to keep it simple, and just use the objects name (or made something up that would work) for the "letters". As it was the first project, before we even deep into how a camera works, it took a while to tinker around with the settings until a photo turned out to look somewhat like it did in real life. I learned that even when you try, it's hard to find something that starts with "x". </p>
+	      </div>
+	    </div>
+	
+	    <div class="DPIIwT">
+	      <div id="autoscroller">
+	          <img src="./Assets/DP/carousel1.jpg" />
+	          <img src="./Assets/DP/carousel1.jpg" />
+	          <img src="./Assets/DP/carousel1.jpg" />
+	      </div>
+	  
+	      <p class="DPIText" style="top: 200%;">Repetition was a project where you just had to find repeating items. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. Repeating. </p>
+	    </div>
+	
+	    <div class="DPIIwT">
+	      <div id="ApeturePriority">
+	        <div class="column">
+	          <img src="./Assets/DP/carousel1.jpg" />
+	          <img src="./Assets/DP/carousel1.jpg" />
+	          <img src="./Assets/DP/carousel1.jpg" />
+	        </div>
+	      <div class="column">
+	        <img src="./Assets/DP/carousel1.jpg" />
+	        <img src="./Assets/DP/carousel1.jpg" />
+	        <img src="./Assets/DP/carousel1.jpg" />
+	      </div>
+	      <div class="column">
+	        <img src="./Assets/DP/carousel1.jpg" />
+	        <img src="./Assets/DP/carousel1.jpg" />
+	        <img src="./Assets/DP/carousel1.jpg" />
+	      </div>
+	    </div>
+	
+	      <p class="DPIText" style="top: 300%;">In Apeture Priority, you had to take pictures with various apetures.</p>
+	    </div>
+	
+	    <div class="backToMainMenu"><b>Back to Main Menu</b></div>
+	  </div>
+	
+	    
+	
+	
+	  </div>
+	  
+	  
+	  <div id="GDPage">
+	    <h1 class="headlineText">Graphic Design</h1>
+	  </div>
+	  <div id="GDImages" style="display: none">
+	    
+	    <div class="image-with-text">
+	      <div class="image">
+	        <img id="TaA" src="./Assets/GD/TreeAndAnimals.jpg" />
+	      </div>
+	      <div class="text">
+	        <p>Tree and Animals was the first thing I made in Graphic Design. It was made in Photoshop. We were doing training, and learning the basics, and were messing around with masks. I threw in a tree, and messed around with some of Photoshop's built-in textures. For the rest, I got the images, masked them to the best of my ability, then used inner-glows, shadows, and a variety of other effects to see what would happen. The wolf and eagle both have 2 different colors, made with 2 separate masks that overlapped each other. The apples were just a fun little bonus, to spruce things up.</p>
+	      </div>
+	    </div>
+	
+	    
+	    <div class="image-with-text" style="flex-direction: row-reverse;">
+	      <div class="image">
+	        <img id="ESTL" src="./Assets/GD/ESportsTeamLogo.jpg"/>
+	      </div>
+	      
+	      <div class="text">
+	        <p>The ESports Logo was a really fun project, especially becaues Logos are a lot different from other types of designs, because it's centered around an object, and you can make the borders to whatever you want. I was just in Ilustrator making some semi-circles and bubbly shapes, when it started to slightly resemble Joycons (if you looked at it in a weird way). Because the ESports team had multiple Switch games, it seemed like a perfect oppurtunitiy. I got to mess around a lot with glows. The diamond-shape, lightning bolt, and the outline itself all have glows. I really liked how the color scheme turned out. especially because it resembles our school colors so well.</p>
+	      </div>
+	    </div>
+	        
+	    <div class="image-with-text">
+	      <div class="image">
+	        <img id="TP" src="./Assets/GD/TravelPoster.jpg"/>
+	      </div>
+	      <div class="text">
+	        <p>The Travel Poster assignment was an interesting one. We had to promote a location (I chose the Burj Khalifa, because it was the first thing to come to mind), and everything had to be vector artwork & traced. Illustrator had auto-trace abilities, but in this case that was not allowed. Despite being tedious, it made for a different way to view the location, and go into the tiniest of details. Because tracing took a while, I never really got to making the background of the image, but I think it still turned out well, as most attention is in the foreground anyways.</p>
+	      </div>
+	
+	    </div>
+	
+	
+	    <div class="backToMainMenu"><b>Back to Main Menu</b></div>
+	  </div>
+	
+	  <div>
+	    <div id="startCover3" class="introAnim" style="background-color: blue; left: -80%;"></div>
+	    <div id="startCover2" class="introAnim" style="background-color: orange; left: -40%;"></div>
+	    <div id="startCover1" class="introAnim" style="background-color: blue; left: -20%;"></div>
+	    <div id="startCover" class="introAnim" style="background-color: black; left: 0;">
+	      <div id="loader">
+	        <div class="loadingCircle" style="left: 50%;"> </div>
+	        <div class="loadingCircle" style="top: 50%;"> </div>
+	        <div class="loadingCircle" style="left: 100%; top: 50%;"> </div>
+	        <div class="loadingCircle" style="top: 100%; left: 50%;"> </div>
+	
+	        <div class="loadingCircle" style="left: 15%; top: 15%;"> </div>
+	        <div class="loadingCircle" style="left: 85%; top: 15%;"> </div>
+	        <div class="loadingCircle" style="top: 85%; left: 85%;"> </div>
+	        <div class="loadingCircle" style="top: 85%; left: 15%;"> </div>
+	      </div>
+	    </div>
+	
+	    
+	  </div>
+
+
+
+
+	
+	<button id="runButton">asdf</button>
+
     
     
-	<div id="headerBackground">
-		<div id="headerDiv">
-
-			<h1 id="headerText">lorem ipsum</h1>
-
-			<select id="pageSelection" class="selection" >
-				<option value="" disabled selected>select</option>
-
-			</select>
-
-		</div>
-	</div>
-    
-    <div id="pagesParent">
-    
-            <div id="main">
-                <h2><b><i>Main Page</i></b></h2>
-
-        
-                
-                <div id="firstImpression"> 
-                    
-                    
-                    <div id="DPI"> 
-                        <h1 align="center">dp</h1>
-                        <img id="testImg" src="./Assets/testImg.jpg"> </img>
-                    </div>
-                
-                
-                    <div id="GD"> 
-                        <h1 align="center"> gd</h1>
-                        <img id="testImg2" src="./Assets/testImg2.jpg"> </img>
-                    </div>
-                </div>
-        
-
-            </div>
-
-    
-    
-    
-            <div id="a">
-                <h2><b><i>Sub Page 1</i></b></h2>
-
-                <p>a</p>
-            </div>
-            <div id="b">
-                <h2><b><i>Sub Page 2</i></b></h2>
-
-                <p>b</p>
-            </div>
-            <div id="c">
-                <h2><b><i>Sub Page 3</i></b></h2>
-
-                <p>c</p>
-            </div>
-
-            <div id="aboutMe">
-                <h2><b><i>Abc</i></b></h2>
-            </div>
-    </div>
-    
-    
-
-    <button id="buttonTest">a</button>
-    
-    <button id="runButton">asdf</button>
-
-    
-    
-    <script src="./script.js" type="application/javascript"></script>
-
-    <script src="./scene.js" type="application/javascript"></script>
-    <script src="./manager.js" type="application/javascript"></script>
+	<script src="./script.js" type="application/javascript"></script>
+	
+	<script src="./scene.js" type="application/javascript"></script>
+	<script src="./manager.js" type="application/javascript"></script>
 	
 </body>
-
 
     
 </html>
