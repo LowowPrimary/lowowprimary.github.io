@@ -129,7 +129,7 @@ let createGameScene = function(canvas, engine) {
 
 
 
-
+/*
   var button = BABYLON.MeshBuilder.CreateBox("button", {size: 1}, scene);
   button.position = new BABYLON.Vector3(30, 10, 30);
 
@@ -213,6 +213,7 @@ let createGameScene = function(canvas, engine) {
       }
     )
   );
+  */
 
 
   
