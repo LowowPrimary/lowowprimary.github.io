@@ -2,7 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
-body, html{
+html{
     background-color: black;/*#211F47; previously gray*/
     /*padding: 20px;*/
     width: 100%;
