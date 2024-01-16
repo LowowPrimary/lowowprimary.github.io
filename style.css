@@ -27,20 +27,6 @@ body, html{
   position: absolute;
   display: none;
 }
-#runButton {
-    background-color: gray;
-    min-width: 100%;
-    min-height: 100%;
-    align-self: baseline;
-    outline: 10px solid black;
-    border-radius: 10px
-}
-#runButton:hover {
-    transform: scale(1.03);
-    transition-duration: .3s;
-}
-
-
 
 
 
