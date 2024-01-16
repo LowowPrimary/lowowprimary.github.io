@@ -311,11 +311,6 @@ let createGameScene = function(canvas, engine) {
 
 };
 
-export {
-  createGameScene
-}
-
-
 
 
 
