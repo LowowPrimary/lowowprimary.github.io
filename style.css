@@ -37,17 +37,19 @@ html{
 
 
 #Repetition {
+  display: flex;
   position: absolute;
   left: 0;
-  width: 70%;
-  float: right;
+  width: 55%;
   flex-wrap: wrap;
   padding: 0 4px;
+  overflow-y: scroll;
+  max-height: 15%;
+  border: 5px solid blue;
 }
 
 .column {
   flex: 25%;
-  max-width: 25%;
   padding: 0 4px;
 }
 
@@ -81,6 +83,7 @@ html{
   height: 500px;
   
   overflow-x: auto;
+  overflow-y: hidden;
   white-space: nowrap;
   margin: 10px;
 }
