@@ -1,75 +1,262 @@
-/* REQUIREMENTS
+let DPICover = document.getElementById("DPICover");
+let GDCover = document.getElementById("GDCover");
+let background = document.getElementById("background");
+let menu = document.getElementById("menu");
+let backToMainMenu = document.getElementById("backToMainMenu");
 
-https://forum.babylonjs.com/t/mesh-intersection-by-using-stencil-buffer/11174
+let fullscreened = false;
 
-DP:
 
-GD:
-Task 1:
-	-Create an "About Me" Page by adding a new page
-	-Insert a photo of you or some art you have made
-	-Write a short paragraph about you and your abilities. You have not only taken this class but others as well and you also have personal interests and abilities outside of school. 
-Task 2:
-	-Post one project you've completed so far
-	-Write 100 words about your work, process, what you've learned during the project
-Task 3:
-Task 4:
-Task 5:
-*/
 
-// Initialization
-var currentDiv = "main";
-var pageSelector = document.getElementById("pageSelection")
+// ON LOAD ANIMATION
+window.onload = function() {
 
-const pageDivDict = {
-    "main": "main",
-    "a": "a",
-    "b": "b",
-    "c": "c",
-    "aboutMe": "aboutMe"
+  document.getElementById("startCover").style.left = "120%";
+  document.getElementById("startCover1").style.left = "120%";
+  document.getElementById("startCover2").style.left = "120%";
+  document.getElementById("startCover3").style.left = "120%";
+
 };
 
-// Create Page Options
-for (const [k, v] of Object.entries(pageDivDict)) {
-	let opt = document.createElement("option");
-	
-  	let optText = document.createTextNode(k);
-	
-	opt.appendChild(optText);
-pageSelector.appendChild(opt);
-	currentDiv = k;
+let bTMMBtns = document.querySelectorAll(".backToMainMenu");
+
+bTMMBtns.forEach(function(button) {
+  button.addEventListener("click", function() {
+    fullscreened = false;
     
-    optDiv = document.getElementById(currentDiv);
-	if (k != "main") {
-        optDiv.style.display = "none";
-    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  
+    setTimeout(function(){
+        document.getElementById("DPIPage").style.top = "-100%";
+        document.getElementById("GDPage").style.top = "-100%";
+  
+        background.style.opacity = "100%";
+        menu.style.opacity = "100%";
+  
+        document.getElementById("DPIImages").style.display = "none";
+        document.getElementById("GDImages").style.display = "none";
+    }, 700);
+    
+  });
+});
+
+
+
+async function startDPI() {
+  fullscreened = true;
+
+  DPICover.style.left = "100%";
+  background.style.opacity = "0%";
+  menu.style.opacity = "0%";
+  document.getElementById("DPICover").style.opacity = "0%";
+
+  await new Promise(resolve => setTimeout(resolve, 1000));
+
+
+  document.getElementById("DPIPage").style.top = "0%";
+
+  let DPIImages = document.getElementById("DPIImages");
+  DPIImages.style.display = "flex";
+
+}
+
+
+
+document.getElementById("DPIMainPage").addEventListener("click", function() {
+  if (!fullscreened) {
+    startDPI();
+  }
+});
+DPICover.addEventListener("click", function() {
+  if (!fullscreened) {
+    startDPI();
+  }
+});
+document.getElementById("DPIMainPage").addEventListener("mouseenter", function() {
+  if (!fullscreened) {
+    DPICover.style.left = "0";
+    background.style.opacity = "0%";
+  } 
+});
+
+DPICover.addEventListener("mouseleave", function() {
+  if (!fullscreened) {
+    DPICover.style.left = "-33%";
+    background.style.opacity = "100%";
+  }
+});
+
+
+
+async function startGD() {
+  fullscreened = true;
+  
+  GDCover.style.left = "0";
+  background.style.opacity = "0%";
+  menu.style.opacity = "0%";
+  document.getElementById("GDCover").style.opacity = "0%";
+  
+  await new Promise(resolve => setTimeout(resolve, 1000));
+
+
+  document.getElementById("GDPage").style.top = "0%";
+
+  let GDImages = document.getElementById("GDImages");
+  GDImages.style.display = "flex";
+}
+
+document.getElementById("GDMainPage").addEventListener("click", function() {
+  if (!fullscreened) {
+    startGD();
+  }
+});
+GDCover.addEventListener("click", function() {
+  if (!fullscreened) {
+    startGD();    
+  }
+});
+document.getElementById("GDMainPage").addEventListener("mouseenter", function() {
+  if (!fullscreened) {
+    GDCover.style.left = "70%";
+    background.style.opacity = "0%";
+  }
+});
+
+GDCover.addEventListener("mouseleave", function() {
+  if (!fullscreened) {
+    GDCover.style.left = "100%";
+    background.style.opacity = "100%";
+  }
+});
+
+
+//tcontainer.addEventListener("", function() {});
+
+
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn")
+const carousel = document.getElementById("carousel");
+let carouselIndex = document.querySelectorAll(".carouselIndex");
+
+const carouselLen = document.querySelectorAll('.carouselObj').length;
+
+
+const abstractAlphabetText = {
+  "1": "Apprehension",
+  "2": "Bell 1",
+  "3": "Bell 2",
+  "4": "Button",
+  "5": "Citizenship",
+  "6": "Disclaimer",
+  "7": "Examiner",
+  "8": "Exhibit",
+  "9": "Field",
+  "10": "Grass",
+  "11": "Horizon",
+  "12": "Inscription",
+  "13": "Jesting Area",
+  "14": "Knob",
+  "15": "Logo",
+  "16": "Manhole",
+  "17": "Neighberhood",
+  "18": "Outlet",
+  "19": "Oxygen Supplier",
+  "20": "Painting",
+  "21": "Petals",
+  "22": "Propaganda 1",
+  "23": "Propaganda 2",
+  "24": "Questionable Dirt Traces",
+  "25": "Reservoir",
+  "26": "Rocks",
+  "27": "Rooftop",
+  "28": "Shortcut",
+  "29": "Table",
+  "30": "Utopia",
+  "31": "Valve",
+  "32": "Work Surface",
+  "33": "Yard (in background)",
+  "34": "Zig-Zagging Leaves"
 };
 
+let currentIndex = 1;
+console.log(currentIndex);
+carouselIndex[0].textContent = abstractAlphabetText[currentIndex+1] + " - " + (currentIndex+1) + "/" + carouselLen;
 
 
-// Changing Pages
-var pageSelection = document.getElementById("pageSelection");
+  
+function updateCarousel(newIndex) {
 
-pageSelection.addEventListener("change", function() {
-    alert("s p");
-	
-	for (const [k, v] of Object.entries(pageDivDict)) {
-		if (k == pageSelection.value) {
-			document.getElementById(k).style.display = "flex";
+  if (newIndex < 0) {
+    document.querySelectorAll('.carouselObj')[currentIndex].style.opacity = 0;
+    newIndex = carouselLen - 1;
+    document.querySelectorAll('.carouselObj')[newIndex].style.opacity = 1;
+  } else if (newIndex > carouselLen - 1) {
+    document.querySelectorAll('.carouselObj')[currentIndex].style.opacity = 0;
+    newIndex = 0;
+    document.querySelectorAll('.carouselObj')[newIndex].style.opacity = 1;
+  } else {
+    document.querySelectorAll('.carouselObj')[currentIndex].style.opacity = 0;
+    document.querySelectorAll('.carouselObj')[newIndex].style.opacity = 1;
+  }
 
-		} else {
-			document.getElementById(k).style.display = "none";
-		}
-	};
-	
+  currentIndex = newIndex;
+  carouselIndex[0].textContent = abstractAlphabetText[currentIndex+1] + " - " + (currentIndex+1) + "/" + carouselLen;
+
+  /*
+  if (currentIndex > 0) {
+    document.querySelectorAll('.carouselObj')[currentIndex + 1].style.opacity = 0;
+    document.querySelectorAll('.carouselObj')[currentIndex].style.opacity = 1;
+  } else {
+    document.querySelectorAll('.carouselObj')[currentIndex].style.opacity = 0;
+    currentIndex = newIndex;
+    document.querySelectorAll('.carouselObj')[currentIndex].style.opacity = 1;    
+  }
+
+  if (currentIndex < carouselLen -1) {
+    document.querySelectorAll('.carouselObj')[currentIndex - 1].style.opacity = 0;
+    document.querySelectorAll('.carouselObj')[currentIndex].style.opacity = 1;
+  } else {
+    document.querySelectorAll('.carouselObj')[currentIndex].style.opacity = 0;
+    currentIndex = 0;
+    document.querySelectorAll('.carouselObj')[currentIndex].style.opacity = 1;
+  }
+  */
+
+}
+
+document.getElementById("prevBtn").addEventListener("click", function() {
+  updateCarousel(currentIndex-1);
+});
+
+document.getElementById("nextBtn").addEventListener("click", function() {
+  updateCarousel(currentIndex+1);
 });
 
 
-// Random Test Button with No Purpose
-var button = document.getElementById("buttonTest");
-button.addEventListener("click", function() {
-        
-	alert("c"); 
-});
+function carouselTimeout() {
+  updateCarousel(currentIndex+1);
 
+  setTimeout(carouselTimeout, 3000);
+}
+
+setTimeout(carouselTimeout, 3000);
+
+
+
+
+
+const imageDiv = document.getElementById('autoscroller');
+let scrollAmount = 0;
+function scrollImages() {
+  if (!(imageDiv.matches(":hover"))) {
+    scrollAmount += 4; 
+    imageDiv.scrollTo(scrollAmount, 0);
+    if (scrollAmount >= imageDiv.scrollWidth - imageDiv.clientWidth) {
+      scrollAmount = 0;
+    }
+  } else {
+    scrollAmount = imageDiv.scrollLeft;
+  }
+}
+setInterval(scrollImages, 20);
 
