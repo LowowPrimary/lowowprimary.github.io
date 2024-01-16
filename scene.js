@@ -5,9 +5,6 @@ const picLocations = [
   [-3, -25, 36, ((3*Math.PI)/2)]
 ];
 
-
-// getMap() returns the map as a list w/ strings
-import { getMap } from "./map.js";
 const walkSpeed = 1;
 const runSpeed = 8;
 
@@ -312,12 +309,6 @@ let createGameScene = function(canvas, engine) {
     };
   };
 
-
-    //return scene;
-  return {
-    "scene": scene,
-    "camera": camera,
-  };
 };
 
 export {

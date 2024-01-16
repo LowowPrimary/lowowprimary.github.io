@@ -2,6 +2,7 @@
 // don't know what first line means. this line just to recommit cuz something shady going on
 // still not commiting script, don't know why ;=;
 let runButton = document.getElementById("runButton");
+import { createGameScene } from "./scene.js";
 
 runButton.addEventListener("click", function() {
 	
@@ -24,7 +25,7 @@ runButton.addEventListener("click", function() {
     //alert("engine");
 
     // create scene
-    let scene = createScene(canvas, engine);
+    createGameScene(canvas, engine);
 	//alert("scene");
 	
 	// lock mouse
