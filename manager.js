@@ -5,12 +5,14 @@ let runButton = document.getElementById("runButton");
 runButton.addEventListener("click", function() {
 	
     //alert("clicked");
-    runButton.style.display = "none";
     //hide everything
-    document.getElementById("headerBackground").style.display = "none";
-    document.getElementById("pagesParent").style.display = "none";
-    document.getElementById("buttonTest").style.display = "none";
-    
+    document.getElementById("headline").style.display = "none";
+    document.getElementById("menu").style.display = "none";
+
+    document.getElementById("DPIPage").style.display = "none";
+    document.getElementById("DPIImages").style.display = "none";
+    document.getElementById("GDPage").style.display = "none";
+    document.getElementById("GDImages").style.display = "none";
 
     
     // get canvas, create engine
