@@ -49,7 +49,7 @@ runButton.addEventListener("click", function() {
     //alert("engine");
 
     // create scene
-    createGameScene(canvas, engine);
+    let scene = createGameScene(canvas, engine);
 	//alert("scene");
 	
 	// lock mouse

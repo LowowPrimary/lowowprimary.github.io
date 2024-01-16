@@ -128,91 +128,6 @@ let createGameScene = function(canvas, engine) {
 
 
 
-/*
-  var button = BABYLON.MeshBuilder.CreateBox("button", {size: 1}, scene);
-  button.position = new BABYLON.Vector3(30, 10, 30);
-
-  var clickMaterial = new BABYLON.StandardMaterial("material", scene);
-  clickMaterial.diffuseTexture = new BABYLON.Texture("./Assets/GD/DesignElementInfographic.jpg", scene);
-  clickMaterial.scale = .5;
-
-
-  button.actionManager = new BABYLON.ActionManager(scene);
-  button.material = clickMaterial;
-
-
-  // THE ANIMATION THAT I CUT THE CODE FROM
-
-  button.actionManager.registerAction(new BABYLON.ExecuteCodeAction(BABYLON.ActionManager.OnPointerOverTrigger, function() {
-    button.animations = [increaseAnimation];
-    scene.beginAnimation(button, 0, 5, false);
-  }));    
-
-
-  button.actionManager.registerAction(new BABYLON.ExecuteCodeAction(BABYLON.ActionManager.OnPointerOutTrigger, function() {
-    button.animations = [decreaseAnimation];
-    scene.beginAnimation(button, 0, 5, false);
-  }));
-
-
-
-
-  let camButton = document.getElementById("moveToCam");
-
-  let x = document.getElementById("x");
-  let y = document.getElementById("y");
-  let z = document.getElementById("z");
-
-  x.value = camera.position.x;
-  y.value = camera.position.y;
-  z.value = camera.position.z;
-
-
-  button.position = new BABYLON.Vector3(30, 10, 30);
-
-
-  function change() {
-
-    if (Number.isInteger(x.value) && Number.isInteger(y.value) && Number.isInteger(z.value)) {
-
-        alert("1");
-        button.position = new BABYLON.Vector3(x.value, y.value, z.value);
-        alert(button.position);
-        console.log(button.position);
-    }
-  }
-
-
-  x.addEventListener("change", change);
-  y.addEventListener("change", change);
-  z.addEventListener("change", change);
-
-
-  function moveCube() {
-     x.value = camera.position.x;
-     y.value = camera.position.y;
-     z.value = camera.position.z;
-     button.position = new BABYLON.Vector3(x.value, y.value, z.value);
-     console.log("success?");
-  }
-  camButton.addEventListener("click", moveCube);
-
-  var scorePoints = 0;
-  button.actionManager.registerAction(
-    new BABYLON.ExecuteCodeAction(
-      BABYLON.ActionManager.OnPickTrigger,
-      function() {
-        let score = document.getElementById("score");
-
-        scorePoints += 1;
-        score.innerText = scorePoints + " / 15";
-        if (score >= 15) {
-          alert("WIN");
-        }
-      }
-    )
-  );
-  */
 
 
   
@@ -279,6 +194,7 @@ let createGameScene = function(canvas, engine) {
     };
   };
 
+  return scene;
 };
 
 
