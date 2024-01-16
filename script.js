@@ -174,8 +174,9 @@ const abstractAlphabetText = {
   "30": "Utopia",
   "31": "Valve",
   "32": "Work Surface",
-  "33": "Yard (in background)",
-  "34": "Zig-Zagging Leaves"
+  "33": "(e)Xit",
+  "34": "Yard (in background)",
+  "35": "Zig-Zagging Leaves"
 };
 
 let currentIndex = 1;

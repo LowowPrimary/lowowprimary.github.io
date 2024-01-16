@@ -45,7 +45,6 @@ html{
   padding: 0 4px;
   overflow-y: scroll;
   max-height: 15%;
-  border: 5px solid blue;
 }
 
 .column {
