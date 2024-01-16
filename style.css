@@ -86,10 +86,10 @@ html{
   margin: 10px;
 }
 
-#autoscrollerObj > img {
+#autoscroller > img {
+  height: 100%;
   padding-right: 20px;
   padding-left: 20px;
-  top: 0;
 }
 
 
