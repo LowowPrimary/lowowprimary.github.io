@@ -28,10 +28,6 @@ function animateFOV(camera, start, end, duration) {
 
 let createGameScene = function(canvas, engine) {
 
-  // get the MAP
-  const map = getMap();
-
-
   //var rockFloorTex = new BABYLON.Texture("./Assets/rockFloor.jpg", scene); 
 
   // setup scene
@@ -42,31 +38,6 @@ let createGameScene = function(canvas, engine) {
   scene.enablePhysics(scene.gravity, new BABYLON.CannonJSPlugin());
   scene.clearColor = new BABYLON.Color3(0, .3, .5);
 
-
-  ////   CAMERA   ////
-
-  // cycle through map and find p (player spawn)
-
-  var pSpawnX;
-  var pSpawnY;
-  var pSpawnHeight;
-  for (let [key, value] of Object.entries(map)) {
-    let currFloor = value["Map"];
-
-    for (let y = 0; y < currFloor.length; y++) {
-
-      if (currFloor[y].indexOf("p") != "-1") {
-        pSpawnX = currFloor[y].indexOf("p");
-        pSpawnY = y;
-        pSpawnHeight = (value["Height"] * 5) + 2;
-      };
-    };
-  };
-  
-  // actual creation
-  //const camera = new BABYLON.UniversalCamera("UniversalCamera", new BABYLON.Vector3(pSpawnX, pSpawnHeight, pSpawnY), scene);
-  //const camera = new BABYLON.UniversalCamera("UniversalCamera", new BABYLON.Vector3(pSpawnX, 10, pSpawnY), scene);
-  //const camera = new BABYLON.UniversalCamera("UniversalCamera", new BABYLON.Vector3(-27, -16, -15), scene);
   const camera = new BABYLON.UniversalCamera("UniversalCamera", new BABYLON.Vector3(-3, 0, 38), scene);
 
   camera.attachControl(canvas, true);
