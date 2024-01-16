@@ -44,6 +44,7 @@ body, html{
 
 #ApeturePriority {
   position: absolute;
+  overflow-y: scroll;
   left: 0;
   width: 70%;
   display: flex;
