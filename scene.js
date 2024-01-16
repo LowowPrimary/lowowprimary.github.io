@@ -85,7 +85,7 @@ let createGameScene = function(canvas, engine) {
 
   
   let displayImage = new BABYLON.StandardMaterial("material", scene);
-  displayImage.diffuseTexture = new BABYLON.Texture("./Assets/DP/AbstractAlphabet/AbstractAlphabet-5.png", scene);
+  displayImage.diffuseTexture = new BABYLON.Texture("./Assets/DP/AbstractAlphabet/AbstractAlphabet-5.jpg", scene);
 
   for (let [key, value] of Object.entries(picLocations)) {
     let display = BABYLON.MeshBuilder.CreateBox("wall", {
