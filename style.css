@@ -83,7 +83,6 @@ body, html{
   height: 500px;
   
   overflow-x: auto;
-  overflow-y: scroll;
   white-space: nowrap;
   margin: 10px;
 }
