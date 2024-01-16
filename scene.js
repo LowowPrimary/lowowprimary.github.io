@@ -1,5 +1,6 @@
 // x, y, z, rotation
 // N:Math.PI   E:(3(Math.PI)/2)   S:0   W:(Math.PI/2)
+// please, github, update scene.js
 const picLocations = [
   [-3, -27, 38, ((3*Math.PI)/2)],
   [-3, -25, 36, ((3*Math.PI)/2)]
