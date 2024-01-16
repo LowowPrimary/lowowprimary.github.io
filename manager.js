@@ -1,5 +1,6 @@
 // floor is whether it's floor or roof
 // don't know what first line means. this line just to recommit cuz something shady going on
+// still not commiting script, don't know why ;=;
 let runButton = document.getElementById("runButton");
 
 runButton.addEventListener("click", function() {

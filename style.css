@@ -37,13 +37,11 @@ body, html{
 }
 
 
-#ApeturePriority {
+#Repetition {
   position: absolute;
   overflow-y: scroll;
   left: 0;
   width: 70%;
-  display: flex;
-  max-height: 100%;
   float: right;
   flex-wrap: wrap;
   padding: 0 4px;
@@ -76,10 +74,6 @@ body, html{
 }
 
 
-
-
-
-
 #autoscroller {
   align-self: flex-start;
 
@@ -89,7 +83,7 @@ body, html{
   height: 500px;
   
   overflow-x: auto;
-  overflow-y: hidden;
+  overflow-y: scroll;
   white-space: nowrap;
   margin: 10px;
 }
@@ -97,6 +91,7 @@ body, html{
 #autoscrollerObj > img {
   padding-right: 20px;
   padding-left: 20px;
+  top: 0;
 }
 
 
