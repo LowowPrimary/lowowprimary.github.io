@@ -28,7 +28,6 @@ function animateFOV(camera, start, end, duration) {
 
 let createGameScene = function(canvas, engine) {
 
-  //var rockFloorTex = new BABYLON.Texture("./Assets/rockFloor.jpg", scene); 
 
   // setup scene
   const scene = new BABYLON.Scene(engine);
@@ -86,7 +85,7 @@ let createGameScene = function(canvas, engine) {
 
   
   let displayImage = new BABYLON.StandardMaterial("material", scene);
-  displayImage.diffuseTexture = new BABYLON.Texture("./Assets/Images/click.png", scene);
+  displayImage.diffuseTexture = new BABYLON.Texture("./Assets/DP/AbstractAlphabet/AbstractAlphabet-5.png", scene);
 
   for (let [key, value] of Object.entries(picLocations)) {
     let display = BABYLON.MeshBuilder.CreateBox("wall", {
