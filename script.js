@@ -179,7 +179,7 @@ const abstractAlphabetText = {
   "35": "Zig-Zagging Leaves"
 };
 
-let currentIndex = 1;
+let currentIndex = 0;
 console.log(currentIndex);
 carouselIndex[0].textContent = abstractAlphabetText[currentIndex+1] + " - " + (currentIndex+1) + "/" + carouselLen;
 
@@ -202,26 +202,6 @@ function updateCarousel(newIndex) {
 
   currentIndex = newIndex;
   carouselIndex[0].textContent = abstractAlphabetText[currentIndex+1] + " - " + (currentIndex+1) + "/" + carouselLen;
-
-  /*
-  if (currentIndex > 0) {
-    document.querySelectorAll('.carouselObj')[currentIndex + 1].style.opacity = 0;
-    document.querySelectorAll('.carouselObj')[currentIndex].style.opacity = 1;
-  } else {
-    document.querySelectorAll('.carouselObj')[currentIndex].style.opacity = 0;
-    currentIndex = newIndex;
-    document.querySelectorAll('.carouselObj')[currentIndex].style.opacity = 1;    
-  }
-
-  if (currentIndex < carouselLen -1) {
-    document.querySelectorAll('.carouselObj')[currentIndex - 1].style.opacity = 0;
-    document.querySelectorAll('.carouselObj')[currentIndex].style.opacity = 1;
-  } else {
-    document.querySelectorAll('.carouselObj')[currentIndex].style.opacity = 0;
-    currentIndex = 0;
-    document.querySelectorAll('.carouselObj')[currentIndex].style.opacity = 1;
-  }
-  */
 
 }
 
