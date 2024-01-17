@@ -180,7 +180,6 @@ const abstractAlphabetText = {
 };
 
 let currentIndex = 0;
-console.log(currentIndex);
 carouselIndex[0].textContent = abstractAlphabetText[currentIndex+1] + " - " + (currentIndex+1) + "/" + carouselLen;
 
 
