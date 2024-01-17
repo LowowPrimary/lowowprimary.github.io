@@ -8,9 +8,10 @@ let fullscreened = false;
 
 
 let resume = document.getElementById("resume");
+let blackCover = document.getElementById("blackCover");
 resume.addEventListener("click", function() {
-  resume.style.top = 0;
-  
+  blackCover.style.top = 0;
+
 });
 
 
