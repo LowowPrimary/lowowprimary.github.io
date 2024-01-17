@@ -7,6 +7,12 @@ let backToMainMenu = document.getElementById("backToMainMenu");
 let fullscreened = false;
 
 
+let resume = document.getElementById("resume");
+resume.addEventListener("click", function() {
+  resume.style.top = 0;
+  
+});
+
 
 // ON LOAD ANIMATION
 window.onload = function() {
