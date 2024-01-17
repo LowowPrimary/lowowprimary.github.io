@@ -187,16 +187,16 @@ carouselIndex[0].textContent = abstractAlphabetText[currentIndex+1] + " - " + (c
   
 function updateCarousel(newIndex) {
 
+  console.log(newIndex);
+  document.querySelectorAll('.carouselObj')[currentIndex].style.opacity = 0;
+
   if (newIndex < 0) {
-    document.querySelectorAll('.carouselObj')[currentIndex].style.opacity = 0;
     newIndex = carouselLen - 1;
     document.querySelectorAll('.carouselObj')[newIndex].style.opacity = 1;
   } else if (newIndex > carouselLen - 1) {
-    document.querySelectorAll('.carouselObj')[currentIndex].style.opacity = 0;
     newIndex = 0;
     document.querySelectorAll('.carouselObj')[newIndex].style.opacity = 1;
   } else {
-    document.querySelectorAll('.carouselObj')[currentIndex].style.opacity = 0;
     document.querySelectorAll('.carouselObj')[newIndex].style.opacity = 1;
   }
 
