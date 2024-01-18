@@ -6,7 +6,6 @@ let backToMainMenu = document.getElementById("backToMainMenu");
 
 let fullscreened = false;
 
-
 let resumeBtn = document.getElementById("resumeBtn");
 
 let resumePage = document.getElementById("resumePage");
@@ -15,20 +14,20 @@ let aboutMePage = document.getElementById("aboutMePage");
 let blackCover = document.getElementById("blackCover");
 resumeBtn.addEventListener("click", function() {
   blackCover.style.top = "0";
+  aboutMePage.style.display = "none";
   resumePage.style.display = "block";
 });
 
 let aboutMe = document.getElementById("aboutMe");
 aboutMe.addEventListener("click", function() {
-  aboutMePage.style.display = "none";
+  resumePage.style.display = "none";
+  aboutMePage.style.display = "flex";
+  blackCover.style.top = "0";
 });
 
 let bFSP = document.getElementById("backFromSubPage");
 bFSP.addEventListener("click", function() {
   blackCover.style.top = "-100%";
-
-  aboutMePage.style.display = "none";
-  resumePage.style.display = "none";
 });
 
 

@@ -26,7 +26,9 @@ html{
   transform: scale(1.6);
 }
 
-
+#aboutMePage {
+  display: none;
+}
 #resumePage {
   display: none;
   position: absolute; 
