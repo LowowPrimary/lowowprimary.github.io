@@ -11,11 +11,14 @@ let resume = document.getElementById("resume");
 let blackCover = document.getElementById("blackCover");
 resume.addEventListener("click", function() {
   blackCover.style.top = 0;
+  blackCover.style.opacity = "70%";
 });
 
 let bFSP = document.getElementById("backFromSubPage");
 bFSP.addEventListener("click", function() {
+  alert("clicked");
   blackCover.top = "-100%";
+  blackCover.style.opacity = "0";
 });
 
 
