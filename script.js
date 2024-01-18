@@ -15,7 +15,6 @@ resume.addEventListener("click", function() {
 
 let bFSP = document.getElementById("backFromSubPage");
 bFSP.addEventListener("click", function() {
-  alert("clicked");
   blackCover.style.top = "-100%";
 });
 
