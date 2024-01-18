@@ -10,7 +10,14 @@ html{
     overflow-x: hidden; 
 }
 
-
+#aboutMeText {
+  position: absolute; 
+  left: 50%;
+  transform: translate(-50%, 0);
+  outline: 5px solid white;
+  border-radius: 20%;
+  font-size: 300%;
+}
 #backFromSubPage {
   position: absolute; 
   right: 3%; 
