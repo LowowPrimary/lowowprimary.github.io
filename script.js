@@ -12,7 +12,6 @@ let blackCover = document.getElementById("blackCover");
 resume.addEventListener("click", function() {
   blackCover.style.top = 0;
   blackCover.style.display = "flex";
-
 });
 
 
