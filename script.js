@@ -11,7 +11,11 @@ let resume = document.getElementById("resume");
 let blackCover = document.getElementById("blackCover");
 resume.addEventListener("click", function() {
   blackCover.style.top = 0;
-  blackCover.style.display = "flex";
+});
+
+let bFSP = document.getElementById("backFromSubPage");
+bFSP.addEventListener("click", function() {
+  blackCover.top = "-100%";
 });
 
 
