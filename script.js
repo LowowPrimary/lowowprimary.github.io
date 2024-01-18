@@ -7,15 +7,28 @@ let backToMainMenu = document.getElementById("backToMainMenu");
 let fullscreened = false;
 
 
-let resume = document.getElementById("resume");
+let resumeBtn = document.getElementById("resumeBtn");
+
+let resumePage = document.getElementById("resumePage");
+let aboutMePage = document.getElementById("aboutMePage");
+
 let blackCover = document.getElementById("blackCover");
-resume.addEventListener("click", function() {
+resumeBtn.addEventListener("click", function() {
   blackCover.style.top = "0";
+  resumePage.style.display = "block";
+});
+
+let aboutMe = document.getElementById("aboutMe");
+aboutMe.addEventListener("click", function() {
+  aboutMePage.style.display = "none";
 });
 
 let bFSP = document.getElementById("backFromSubPage");
 bFSP.addEventListener("click", function() {
   blackCover.style.top = "-100%";
+
+  aboutMePage.style.display = "none";
+  resumePage.style.display = "none";
 });
 
 

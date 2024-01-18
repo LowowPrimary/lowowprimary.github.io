@@ -13,18 +13,22 @@ html{
 
 #backFromSubPage {
   position: absolute; 
-  left: 10%; 
-  top: 10%;
+  right: 3%; 
+  bottom: 2%;
   transition-duration: .3s;
   background-color: #92e4ff;
+  border-radius: 30%;
+  border: 5px solid black;
+  transform: scale(1.4);
 }
 #backFromSubPage:hover {
     background-color: #66d9ff;
-  transform: scale(1.1);
+  transform: scale(1.6);
 }
 
+
 #resumePage {
-  display: flex;
+  display: none;
   position: absolute; 
   height: 100%; 
   width: 70%;
