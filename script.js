@@ -10,7 +10,7 @@ let fullscreened = false;
 let resume = document.getElementById("resume");
 let blackCover = document.getElementById("blackCover");
 resume.addEventListener("click", function() {
-  blackCover.style.opacity = "70%";
+  blackCover.style.top = "0";
 });
 
 let bFSP = document.getElementById("backFromSubPage");
