@@ -11,6 +11,18 @@ html{
 }
 
 
+#backFromSubPage {
+  position: absolute; 
+  left: 10%; 
+  top: 10%;
+  transition-duration: .3s;
+  background-color: #92e4ff;
+}
+#backFromSubPage:hover {
+    background-color: #66d9ff;
+  transform: scale(1.1);
+}
+
 #resumePage {
   display: flex;
   position: absolute; 
@@ -28,7 +40,7 @@ html{
   width: 100%;
   height: 100%;
   z-index: 100;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 90%);
 }
 
 #canvas {
