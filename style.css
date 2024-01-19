@@ -11,6 +11,20 @@ html{
 }
 
 
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: #338bff;
+}
+::-webkit-scrollbar-track-piece {
+  background-color: black;
+  outline: 5px solid black;
+}
+
+
 .bgImg {
   position: absolute; 
   top: 0; 
