@@ -10,6 +10,13 @@ html{
     overflow-x: hidden; 
 }
 
+.subPageQuote {
+  position: absolute;
+  left: 20%;
+  color: black;
+  font-size: 200%;
+}
+
 #aboutMeText {
   position: absolute; 
   left: 50%;
