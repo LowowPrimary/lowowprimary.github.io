@@ -1,7 +1,7 @@
 let DPICover = document.getElementById("DPICover");
 let GDCover = document.getElementById("GDCover");
-let background = document.getElementById("menu");
-let menu = document.getElementById("theBackgroundCarousel");
+let background = document.getElementById("theBackgroundCarousel");
+let menu = document.getElementById("menu");
 let backToMainMenu = document.getElementById("backToMainMenu");
 
 let fullscreened = false;
