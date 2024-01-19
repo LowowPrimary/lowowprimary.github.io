@@ -95,11 +95,11 @@ async function startDPI() {
   DPICover.style.left = "100%";
   background.style.opacity = "0%";
   menu.style.opacity = "0%";
-  document.getElementById("DPICover").style.opacity = "0%";
+  DPICover.style.opacity = "0%";
 
   await new Promise(resolve => setTimeout(resolve, 1000));
 
-
+  DPICover.style.opacity = "100%";
   document.getElementById("DPIPage").style.top = "0%";
 
   let DPIImages = document.getElementById("DPIImages");
@@ -121,7 +121,6 @@ DPICover.addEventListener("click", function() {
 });
 document.getElementById("DPIMainPage").addEventListener("mouseenter", function() {
   if (!fullscreened) {
-    document.getElementById("DPICover").style.opacity = "100%";
     DPICover.style.transform = "translate(0, 0)";
     background.style.opacity = "0%";
   } 
@@ -142,11 +141,11 @@ async function startGD() {
   GDCover.style.left = "0";
   background.style.opacity = "0%";
   menu.style.opacity = "0%";
-  document.getElementById("GDCover").style.opacity = "0%";
+  GDCover.style.opacity = "0%";
   
   await new Promise(resolve => setTimeout(resolve, 1000));
 
-
+  GDCover.style.opacity = "100%";
   document.getElementById("GDPage").style.top = "0%";
 
   let GDImages = document.getElementById("GDImages");
@@ -165,7 +164,6 @@ GDCover.addEventListener("click", function() {
 });
 document.getElementById("GDMainPage").addEventListener("mouseenter", function() {
   if (!fullscreened) {
-    document.getElementById("GDCover").style.opacity = "100%";
     GDCover.style.left = "70%";
     background.style.opacity = "0%";
   }
