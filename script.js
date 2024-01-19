@@ -121,6 +121,7 @@ DPICover.addEventListener("click", function() {
 });
 document.getElementById("DPIMainPage").addEventListener("mouseenter", function() {
   if (!fullscreened) {
+    document.getElementById("DPICover").style.opacity = "100%";
     DPICover.style.transform = "translate(0, 0)";
     background.style.opacity = "0%";
   } 
@@ -164,6 +165,7 @@ GDCover.addEventListener("click", function() {
 });
 document.getElementById("GDMainPage").addEventListener("mouseenter", function() {
   if (!fullscreened) {
+    document.getElementById("GDCover").style.opacity = "100%";
     GDCover.style.left = "70%";
     background.style.opacity = "0%";
   }
