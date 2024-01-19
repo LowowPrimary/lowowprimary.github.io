@@ -23,9 +23,6 @@ document.querySelectorAll(".background")[bgIndex].style.opacity = 1;
 
 function bgUpdateTimeout() {
   
-  console.log(document.querySelectorAll(".background"));
-  console.log(document.querySelectorAll(".background")[bgIndex]);
-
   document.querySelectorAll(".background")[bgIndex].style.opacity = 0;
 
   if (bgIndex+1 > bgLength-1) {
@@ -35,10 +32,10 @@ function bgUpdateTimeout() {
   }
 
   document.querySelectorAll(".background")[bgIndex].style.opacity = 1;
-  bgUpdateTimeout(carouselTimeout, 3000);
+  setTimeout(bgUpdateTimeout, 3000);
 }
 
-bgUpdateTimeout(carouselTimeout, 3000);
+setTimeout(bgUpdateTimeout, 3000);
 
 
 
