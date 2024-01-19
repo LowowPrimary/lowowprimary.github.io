@@ -420,7 +420,7 @@ p {
 
 #DPICover {
   top: 0;
-  left: -33%;
+  transform: translate(-100%, 0);
 }
 #GDCover {
   top: 0;

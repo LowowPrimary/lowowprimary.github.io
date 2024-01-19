@@ -97,14 +97,14 @@ DPICover.addEventListener("click", function() {
 });
 document.getElementById("DPIMainPage").addEventListener("mouseenter", function() {
   if (!fullscreened) {
-    DPICover.style.left = "0";
+    DPICover.style.transform = "translate(0, 0)";
     background.style.opacity = "0%";
   } 
 });
 
 DPICover.addEventListener("mouseleave", function() {
   if (!fullscreened) {
-    DPICover.style.left = "-33%";
+    DPICover.style.transform = "translate(-100%, 0)";
     background.style.opacity = "100%";
   }
 });
