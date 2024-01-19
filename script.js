@@ -99,13 +99,17 @@ async function startDPI() {
 
   await new Promise(resolve => setTimeout(resolve, 1000));
 
-  DPICover.style.opacity = "100%";
-  DPICover.style.left = "auto";
-  DPICover.style.transform = "translate(-100%, 0)";
   document.getElementById("DPIPage").style.top = "0%";
 
   let DPIImages = document.getElementById("DPIImages");
   DPIImages.style.display = "flex";
+
+
+  await new Promise(resolve => setTimeout(resolve, 1000));
+
+  DPICover.style.opacity = "100%";
+  DPICover.style.left = "0";
+  DPICover.style.transform = "translate(-100%, 0)";
 
 }
 
@@ -147,13 +151,17 @@ async function startGD() {
   
   await new Promise(resolve => setTimeout(resolve, 1000));
 
-  GDCover.style.opacity = "100%";
-  GDCover.style.left = "100%";
-  GDCover.style.transform = "translate(0, 0)";
   document.getElementById("GDPage").style.top = "0%";
 
   let GDImages = document.getElementById("GDImages");
   GDImages.style.display = "flex";
+
+  await new Promise(resolve => setTimeout(resolve, 1000));
+
+  GDCover.style.opacity = "100%";
+  GDCover.style.left = "100%";
+  GDCover.style.transform = "translate(0, 0)";
+
 }
 
 document.getElementById("GDMainPage").addEventListener("click", function() {
