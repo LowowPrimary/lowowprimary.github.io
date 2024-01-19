@@ -313,8 +313,8 @@ html{
   display: flex;
   flex-direction: row;
   width: 100%;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 300px;
+  margin-bottom: 500px;
 }
 .text {
   font-size: 200%;
@@ -343,12 +343,13 @@ html{
   background-color: transparent;
 }
 
-#background {
+.background {
   display: flex;
   height: 100%;
   top: 0;
   position: absolute;
   transition-duration: .5s;
+  opacity: 0;
   
   left: 50%;
   transform: translate(-50%, 0%);

@@ -6,6 +6,31 @@ let backToMainMenu = document.getElementById("backToMainMenu");
 
 let fullscreened = false;
 
+
+
+let theBackgroundCarousel = document.getElementById("theBackgroundCarousel");
+let bgLength = document.querySelectorAll("background").length;
+let bgIndex = 0;
+document.querySelectorAll("background")[bgIndex].style.opacity = 1;
+function bgUpdateTimeout() {
+  
+  document.querySelectorAll("background")[bgIndex].style.opacity = 0;
+
+  if (bgIndex+1 > bgLength-1) {
+    bgIndex = 0;
+  } else {
+    bgIndex++;
+  }
+
+  document.querySelectorAll("background")[bgIndex].style.opacity = 1;
+  bgUpdateTimeout(carouselTimeout, 3000);
+}
+
+bgUpdateTimeout(carouselTimeout, 3000);
+
+
+
+
 let resumeBtn = document.getElementById("resumeBtn");
 
 let resumePage = document.getElementById("resumePage");
