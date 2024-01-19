@@ -20,6 +20,11 @@ window.onload = function() {
 let bgLength = document.querySelectorAll(".background").length;
 let bgIndex = 0;
 document.querySelectorAll(".background")[bgIndex].style.opacity = 1;
+
+console.log(document.querySelectorAll(".background"));
+console.log(document.querySelectorAll(".background")[bgIndex]);
+
+
 function bgUpdateTimeout() {
   
   
