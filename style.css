@@ -330,7 +330,7 @@ html{
   transition: 1s;
   top: -100%;
   left: 0;
-  background-color: gray;
+  background-color: transparent;
 }
 
 #background {
