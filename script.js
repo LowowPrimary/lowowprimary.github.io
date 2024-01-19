@@ -6,15 +6,24 @@ let backToMainMenu = document.getElementById("backToMainMenu");
 
 let fullscreened = false;
 
+// ON LOAD ANIMATION
+window.onload = function() {
+
+  document.getElementById("startCover").style.left = "120%";
+  document.getElementById("startCover1").style.left = "120%";
+  document.getElementById("startCover2").style.left = "120%";
+  document.getElementById("startCover3").style.left = "120%";
+
+};
 
 
-let theBackgroundCarousel = document.getElementById("theBackgroundCarousel");
-let bgLength = document.querySelectorAll("background").length;
+let bgLength = document.querySelectorAll(".background").length;
 let bgIndex = 0;
-document.querySelectorAll("background")[bgIndex].style.opacity = 1;
+document.querySelectorAll(".background")[bgIndex].style.opacity = 1;
 function bgUpdateTimeout() {
   
-  document.querySelectorAll("background")[bgIndex].style.opacity = 0;
+  
+  document.querySelectorAll(".background")[bgIndex].style.opacity = 0;
 
   if (bgIndex+1 > bgLength-1) {
     bgIndex = 0;
@@ -55,16 +64,6 @@ bFSP.addEventListener("click", function() {
   blackCover.style.top = "-100%";
 });
 
-
-// ON LOAD ANIMATION
-window.onload = function() {
-
-  document.getElementById("startCover").style.left = "120%";
-  document.getElementById("startCover1").style.left = "120%";
-  document.getElementById("startCover2").style.left = "120%";
-  document.getElementById("startCover3").style.left = "120%";
-
-};
 
 let bTMMBtns = document.querySelectorAll(".backToMainMenu");
 
