@@ -1,6 +1,6 @@
 let DPICover = document.getElementById("DPICover");
 let GDCover = document.getElementById("GDCover");
-let background = document.getElementById("background");
+let background = document.getElementById("menu");
 let menu = document.getElementById("menu");
 let backToMainMenu = document.getElementById("backToMainMenu");
 
