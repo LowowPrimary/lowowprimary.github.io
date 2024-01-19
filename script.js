@@ -31,7 +31,7 @@ function bgUpdateTimeout() {
     bgIndex++;
   }
 
-  document.querySelectorAll("background")[bgIndex].style.opacity = 1;
+  document.querySelectorAll(".background")[bgIndex].style.opacity = 1;
   bgUpdateTimeout(carouselTimeout, 3000);
 }
 
