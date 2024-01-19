@@ -21,13 +21,11 @@ let bgLength = document.querySelectorAll(".background").length;
 let bgIndex = 0;
 document.querySelectorAll(".background")[bgIndex].style.opacity = 1;
 
-console.log(document.querySelectorAll(".background"));
-console.log(document.querySelectorAll(".background")[bgIndex]);
-
-
 function bgUpdateTimeout() {
   
-  
+  console.log(document.querySelectorAll(".background"));
+  console.log(document.querySelectorAll(".background")[bgIndex]);
+
   document.querySelectorAll(".background")[bgIndex].style.opacity = 0;
 
   if (bgIndex+1 > bgLength-1) {
