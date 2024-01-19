@@ -12,10 +12,19 @@ html{
 
 .subPageQuote {
   position: absolute;
-  left: 20%;
+  left: 5%;
   color: black;
-  font-size: 200%;
+  font-size: 250%;
+  
+  font-family: 'Brush Script MT', cursive;
 }
+.subPageQuoteAuthor {
+  position: absolute;
+  left: 10%;
+  color: black;
+  font-size: 150%;
+}
+
 
 #aboutMeText {
   position: absolute; 
@@ -420,6 +429,7 @@ p {
 
 #DPICover {
   top: 0;
+  left: 0;
   transform: translate(-100%, 0);
 }
 #GDCover {
