@@ -32,10 +32,10 @@ function bgUpdateTimeout() {
   }
 
   document.querySelectorAll(".background")[bgIndex].style.opacity = 1;
-  setTimeout(bgUpdateTimeout, 3000);
+  setTimeout(bgUpdateTimeout, 6000);
 }
 
-setTimeout(bgUpdateTimeout, 3000);
+setTimeout(bgUpdateTimeout, 6000);
 
 
 
