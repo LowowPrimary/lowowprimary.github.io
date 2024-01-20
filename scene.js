@@ -36,7 +36,7 @@ const picLocations = [
 
 const walkSpeed = 1;
 const sprintSpeed = 2;
-const superSprintSpeed = 8;
+const superSprintSpeed = 10;
 
 function animateFOV(camera, start, end, duration) {
   let startTime = performance.now();
@@ -142,17 +142,17 @@ let createGameScene = function(canvas, engine) {
     "./Assets/DP/AbstractAlphabet/AbsractAlphabet-22.jpg",
     "./Assets/DP/AbstractAlphabet/AbstractAlphabet-23.jpg",
     "./Assets/DP/AbstractAlphabet/AbstractAlphabet-24.jpg",
-    "./Assets/DP/AbstractAlphabet/AbstractAlphabet-25jpg",
-    "./Assets/DP/AbstractAlphabet/AbstractAlphabet-26jpg",
-    "./Assets/DP/AbstractAlphabet/AbstractAlphabet-27jpg",
-    "./Assets/DP/AbstractAlphabet/AbstractAlphabet-28jpg",
-    "./Assets/DP/AbstractAlphabet/AbstractAlphabet-29jpg",
-    "./Assets/DP/AbstractAlphabet/AbstractAlphabet-30jpg",
-    "./Assets/DP/AbstractAlphabet/AbstractAlphabet-31jpg",
-    "./Assets/DP/AbstractAlphabet/AbstractAlphabet-32jpg",
-    "./Assets/DP/AbstractAlphabet/AbstractAlphabet-33jpg",
-    "./Assets/DP/AbstractAlphabet/AbstractAlphabet-34jpg",
-    "./Assets/DP/AbstractAlphabet/AbstractAlphabet-35jpg",
+    "./Assets/DP/AbstractAlphabet/AbstractAlphabet-25.jpg",
+    "./Assets/DP/AbstractAlphabet/AbstractAlphabet-26.jpg",
+    "./Assets/DP/AbstractAlphabet/AbstractAlphabet-27.jpg",
+    "./Assets/DP/AbstractAlphabet/AbstractAlphabet-28.jpg",
+    "./Assets/DP/AbstractAlphabet/AbstractAlphabet-29.jpg",
+    "./Assets/DP/AbstractAlphabet/AbstractAlphabet-30.jpg",
+    "./Assets/DP/AbstractAlphabet/AbstractAlphabet-31.jpg",
+    "./Assets/DP/AbstractAlphabet/AbstractAlphabet-32.jpg",
+    "./Assets/DP/AbstractAlphabet/AbstractAlphabet-33.jpg",
+    "./Assets/DP/AbstractAlphabet/AbstractAlphabet-34.jpg",
+    "./Assets/DP/AbstractAlphabet/AbstractAlphabet-35.jpg",
 
     "./Assets/DP/ApeturePriority/ApeturePriority-1.jpg",
     "./Assets/DP/ApeturePriority/ApeturePriority-2.jpg",
