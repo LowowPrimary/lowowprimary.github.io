@@ -190,41 +190,11 @@ let createGameScene = function(canvas, engine) {
     "./Assets/DP/Repetition/Repetition-20.jpg",
     "./Assets/DP/Repetition/Repetition-21.jpg",
     "./Assets/DP/Repetition/Repetition-22.jpg",
-  ]
+  ];
 
 
   let i = 0;
 
-  /*
-    for (let [key, value] of Object.entries(picLocations)) {
-    let display = BABYLON.MeshBuilder.CreateBox("wall", {
-        width: 3,
-        height: 2,
-        depth: .1
-    }, scene);
-
-    display.position.x = value[0];
-    display.position.y = value[1];
-    display.position.z = value[2];
-    display.material = displayImage;
-    display.rotation = new BABYLON.Vector3(0, directionKey[value[3]], 0);//(3*Math.PI)/2, 0);
-
-    display.actionManager = new BABYLON.ActionManager(scene);
-    
-    display.actionManager.registerAction(new BABYLON.ExecuteCodeAction(BABYLON.ActionManager.OnPointerOverTrigger, function() { 
-      display.animations = [increaseAnimation];
-      scene.beginAnimation(display, 0, 5, false);
-    }));   
-    
-
-    display.actionManager.registerAction(new BABYLON.ExecuteCodeAction(BABYLON.ActionManager.OnPointerOutTrigger, function() {
-      display.animations = [decreaseAnimation];
-      scene.beginAnimation(display, 0, 5, false);
-    }));
-
-  }
-
-  */
   for (let [key, value] of Object.entries(picLocations)) {
     let display = BABYLON.MeshBuilder.CreateBox("wall", {
       width: 3,
@@ -240,7 +210,7 @@ let createGameScene = function(canvas, engine) {
 
     console.log(i);
     let displayImage = new BABYLON.StandardMaterial("material", scene);
-    displayImage.diffuseTexture = new BABYLON.Texture(images[i], scene);
+    displayImage.diffuseTexture = new BABYLON.Texture(images[(Math.floor(Math.random() * images.length))], scene);
     display.material = displayImage;
     display.material.emissiveColor = BABYLON.Color3.White();
     i++;
