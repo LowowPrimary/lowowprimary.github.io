@@ -6,7 +6,8 @@ let runButton = document.getElementById("runButton");
 
 let createPointerLock = function(scene) {
     let canvas = scene.getEngine().getRenderingCanvas();
-    canvas.addEventListener("click", event => {
+    let crosshair = document.getElementById("crosshair");
+    crosshair.addEventListener("click", event => {
       canvas.requestPointerLock = canvas.requestPointerLock || canvas.msRequestPointerLock || canvas.mozRequestPointerLock || canva;
       if(canvas.requestPointerLock) {
         canvas.requestPointerLock();
@@ -30,7 +31,7 @@ let createPointerLock = function(scene) {
 
 runButton.addEventListener("click", function() {
 	
-    alert("This is only expirimental. Only upper floor of 200 building has images in it. Rest is kind of empty. \n CONTROLS \n  WASD/Arrow Keys: Movement \n  Shift: Sprint\n  Key L: Super Sprint (really fast)\n  Mouse: Turn");
+    alert("This is only expirimental. Only upper floor of 200 building has images in it. Rest is kind of empty. To start, click the white box in the middle (crosshair)\n CONTROLS \n  WASD/Arrow Keys: Movement \n  Shift: Sprint\n  Key L: Super Sprint (really fast)\n  Mouse: Turn");
 
     document.getElementById("crosshair").style.display = "flex";
     //alert("clicked");
@@ -54,14 +55,9 @@ runButton.addEventListener("click", function() {
     // create scene
     let scene = createGameScene(canvas, engine);
 	//alert("scene");
+    createPointerLock(scene);
 	
 	// lock mouse
-  	document.addEventListener("click", function() {
-		canvas.requestPointerLock = canvas.requestPointerLock || canvas.msRequestPointerLock || canvas.mozRequestPointerLock // || canvas;
-		if(canvas.requestPointerLock) {
-		  canvas.requestPointerLock();
-		}
-  	});
 
     //alert("pointer lock");
 
