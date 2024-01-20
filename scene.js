@@ -282,7 +282,7 @@ let createGameScene = function(canvas, engine) {
       animateFOV(camera, 0.8, 1, 200); // Call the animateFOV function to gradually change FOV, (cameraObj, startFOV, endFOV, time in ms)
     };
 
-    if (event.ctrlKey && !sprinting) {
+    if (event.keyCode == 76) {
       sprinting = true;
       camera.speed = superSprintSpeed;
       animateFOV(camera, 0.8, 1, 200);
