@@ -30,6 +30,9 @@ let createPointerLock = function(scene) {
 
 runButton.addEventListener("click", function() {
 	
+    alert("This is only expirimental. Only upper floor of 200 building has images in it. Rest is kind of empty.");
+
+    document.getElementById("crosshair").style.display = "flex";
     //alert("clicked");
     //hide everything
     document.getElementById("headline").style.display = "none";

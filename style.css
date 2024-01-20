@@ -11,6 +11,20 @@ html{
 }
 
 
+#crosshair {
+  display: none;
+  background-color: white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  z-index: 10;
+}
+
+
+
 ::-webkit-scrollbar {
   width: 12px;
 }

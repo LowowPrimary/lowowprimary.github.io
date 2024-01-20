@@ -242,6 +242,7 @@ let createGameScene = function(canvas, engine) {
     let displayImage = new BABYLON.StandardMaterial("material", scene);
     displayImage.diffuseTexture = new BABYLON.Texture(images[i], scene);
     display.material = displayImage;
+    display.material.emissiveColor = BABYLON.Color3.White();
     i++;
   
 
