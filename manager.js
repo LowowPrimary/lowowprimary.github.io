@@ -30,7 +30,7 @@ let createPointerLock = function(scene) {
 
 runButton.addEventListener("click", function() {
 	
-    alert("This is only expirimental. Only upper floor of 200 building has images in it. Rest is kind of empty. \n CONTROLS \n  WASD/Arrow Keys: Movement \n  Shift: Sprint\n  CTRL: Super Sprint (really fast)\n  Mouse: Turn");
+    alert("This is only expirimental. Only upper floor of 200 building has images in it. Rest is kind of empty. \n CONTROLS \n  WASD/Arrow Keys: Movement \n  Shift: Sprint\n  Key L: Super Sprint (really fast)\n  Mouse: Turn");
 
     document.getElementById("crosshair").style.display = "flex";
     //alert("clicked");
