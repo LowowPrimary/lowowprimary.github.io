@@ -65,7 +65,8 @@ let createGameScene = function(canvas, engine) {
   scene.enablePhysics(scene.gravity, new BABYLON.CannonJSPlugin());
   scene.clearColor = new BABYLON.Color3(0, .3, .5);
 
-  const camera = new BABYLON.UniversalCamera("UniversalCamera", new BABYLON.Vector3(-3, 0, 38), scene);
+  const camera = new BABYLON.UniversalCamera("UniversalCamera", new BABYLON.Vector3(-10, 7, -38), scene);
+
 
   camera.attachControl(canvas, true);
 
@@ -122,7 +123,7 @@ let createGameScene = function(canvas, engine) {
     "./Assets/DP/AbstractAlphabet/AbsractAlphabet-4.jpg",
     "./Assets/DP/AbstractAlphabet/AbsractAlphabet-5.jpg",
     "./Assets/DP/AbstractAlphabet/AbsractAlphabet-6.jpg",
-    "./Assets/DP/AbstractAlphabet/AbsractAlphabet-7.jpg",
+    "./Assets/DP/AbstractAlphabet/AbstractAlphabet-7.jpg",
     "./Assets/DP/AbstractAlphabet/AbsractAlphabet-8.jpg",
     "./Assets/DP/AbstractAlphabet/AbsractAlphabet-9.jpg",
     "./Assets/DP/AbstractAlphabet/AbsractAlphabet-10.jpg",
@@ -193,7 +194,9 @@ let createGameScene = function(canvas, engine) {
 
 
   let i = 0;
-  for (let [key, value] of Object.entries(picLocations)) {
+
+  /*
+    for (let [key, value] of Object.entries(picLocations)) {
     let display = BABYLON.MeshBuilder.CreateBox("wall", {
         width: 3,
         height: 2,
@@ -203,7 +206,36 @@ let createGameScene = function(canvas, engine) {
     display.position.x = value[0];
     display.position.y = value[1];
     display.position.z = value[2];
-    display.rotation = new BABYLON.Vector3(0, value[3], 0);//(3*Math.PI)/2, 0);
+    display.material = displayImage;
+    display.rotation = new BABYLON.Vector3(0, directionKey[value[3]], 0);//(3*Math.PI)/2, 0);
+
+    display.actionManager = new BABYLON.ActionManager(scene);
+    
+    display.actionManager.registerAction(new BABYLON.ExecuteCodeAction(BABYLON.ActionManager.OnPointerOverTrigger, function() { 
+      display.animations = [increaseAnimation];
+      scene.beginAnimation(display, 0, 5, false);
+    }));   
+    
+
+    display.actionManager.registerAction(new BABYLON.ExecuteCodeAction(BABYLON.ActionManager.OnPointerOutTrigger, function() {
+      display.animations = [decreaseAnimation];
+      scene.beginAnimation(display, 0, 5, false);
+    }));
+
+  }
+
+  */
+  for (let [key, value] of Object.entries(picLocations)) {
+    let display = BABYLON.MeshBuilder.CreateBox("wall", {
+      width: 3,
+      height: 2,
+      depth: .1
+    }, scene);
+
+    display.position.x = value[0];
+    display.position.y = value[1];
+    display.position.z = value[2];
+    display.rotation = new BABYLON.Vector3(0, directionKey[value[3]], 0);
 
 
     console.log(i);
