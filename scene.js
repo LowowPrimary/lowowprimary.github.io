@@ -1,9 +1,37 @@
 // x, y, z, rotation
 // N:Math.PI   E:(3(Math.PI)/2)   S:0   W:(Math.PI/2)
 // please, github, update scene.js
+const directionKey = {
+  "N": Math.PI,
+  "E": (3 * Math.PI) / 2,
+  "S": 0,
+  "W": Math.PI / 2
+};
 const picLocations = [
-  [-3, -27, 38, ((3*Math.PI)/2)],
-  [-3, -25, 36, ((3*Math.PI)/2)]
+  [-3, -27, 38, "E"],
+  [-3, -25, 36, "E"],
+  [3, 4, -38, "W"],
+  [3, 4, -33, "W"],
+  [-12, 4, -29, "S"],
+  [-4, 4, -30, "S"],
+  [17, 4, -27, "N"],
+  [28, 4, -18, "S"],
+  [35, 4, -27, "N"],
+  [56, 4, -8, "W"], // Black's
+  [57, 4, -35, "W"], // Hamman's
+  [45, 4, -38, "N"], // Hamman's 2
+  [55, 4, 3, "W"], // left wing 1
+  [55, 4, 14, "W"], // left wing 1
+  [55, 4, 22, "W"], // left wing 2
+  [55, 4, 38, "W"], // left wing 2
+  [17, 4, -29, "S"], // no clue
+  [22, 4, -36, "W"], // no clue
+  [36, 4, -29, "S"], // no clue 2
+  [40, 4, -35, "W"], // no clue 2
+  [-1, 4, 1, "E"], // Brink's
+  [-1, 4, 16, "E"], // Brink's 2
+  [-1, 4, 25, "E"], // no clue right wing
+  [-1, 4, 35, "E"] // no clue right wing 
 ];
 
 const walkSpeed = 1;
@@ -70,6 +98,9 @@ let createGameScene = function(canvas, engine) {
 
   let light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(20,  -20, -20), scene);
 
+
+
+  // THE IMAGES
   let easingFunction = new BABYLON.SineEase();
   easingFunction.setEasingMode(BABYLON.EasingFunction.EASINGMODE_EASEINOUT);
   var increaseAnimation = new BABYLON.Animation("increaseAnimation", "scaling", 30, BABYLON.Animation.ANIMATIONTYPE_VECTOR3, BABYLON.Animation.ANIMATIONLOOPMODE_CYCLE);
@@ -83,10 +114,85 @@ let createGameScene = function(canvas, engine) {
   increaseAnimation.setKeys(keysIncrease);
   decreaseAnimation.setKeys(keysDecrease);
 
-  
-  let displayImage = new BABYLON.StandardMaterial("material", scene);
-  displayImage.diffuseTexture = new BABYLON.Texture("./Assets/DP/AbstractAlphabet/AbstractAlphabet-5.jpg", scene);
 
+  let images = [
+    "AbsractAlphabet-1.jpg",
+    "AbsractAlphabet-2.jpg",
+    "AbsractAlphabet-3.jpg",
+    "AbsractAlphabet-4.jpg",
+    "AbsractAlphabet-5.jpg",
+    "AbsractAlphabet-6.jpg",
+    "AbsractAlphabet-7.jpg",
+    "AbsractAlphabet-8.jpg",
+    "AbsractAlphabet-9.jpg",
+    "AbsractAlphabet-10.jpg",
+    "AbstractAlphabet-11.jpg",
+    "AbstractAlphabet-12.jpg",
+    "AbsractAlphabet-13.jpg",
+    "AbsractAlphabet-14.jpg",
+    "AbstractAlphabet-15.jpg",
+    "AbsractAlphabet-16.jpg",
+    "AbsractAlphabet-17.jpg",
+    "AbsractAlphabet-18.jpg",
+    "AbstractAlphabet-19.jpg",
+    "AbsractAlphabet-20.jpg",
+    "AbsractAlphabet-21.jpg",
+    "AbsractAlphabet-22.jpg",
+    "AbstractAlphabet-23.jpg",
+    "AbstractAlphabet-24.jpg",
+    "AbstractAlphabet-25jpg",
+    "AbstractAlphabet-26jpg",
+    "AbstractAlphabet-27jpg",
+    "AbstractAlphabet-28jpg",
+    "AbstractAlphabet-29jpg",
+    "AbstractAlphabet-30jpg",
+    "AbstractAlphabet-31jpg",
+    "AbstractAlphabet-32jpg",
+    "AbstractAlphabet-33jpg",
+    "AbstractAlphabet-34jpg",
+    "AbstractAlphabet-35jpg",
+
+    "ApeturePriority-1.jpg",
+    "ApeturePriority-2.jpg",
+    "ApeturePriority-3.jpg",
+    "ApeturePriority-4.jpg",
+    "ApeturePriority-5.jpg",
+    "ApeturePriority-6.jpg",
+    "ApeturePriority-7.jpg",
+    "ApeturePriority-8.jpg",
+    "ApeturePriority-9.jpg",
+    "ApeturePriority-10.jpg",
+    "ApeturePriority-12.jpg",
+    "ApeturePriority-13.jpg",
+    "ApeturePriority-14.jpg",
+    "ApeturePriority-15.jpg",
+
+    "Repitition-1.jpg",
+    "Repitition-2.jpg",
+    "Repitition-3.jpg",
+    "Repitition-4.jpg",
+    "Repitition-5.jpg",
+    "Repitition-6.jpg",
+    "Repitition-7.jpg",
+    "Repitition-8.jpg",
+    "Repitition-9.jpg",
+    "Repitition-10.jpg",
+    "Repitition-11.jpg",
+    "Repitition-12.jpg",
+    "Repitition-13.jpg",
+    "Repitition-14.jpg",
+    "Repitition-15.jpg",
+    "Repitition-16.jpg",
+    "Repitition-17.jpg",
+    "Repitition-18.jpg",
+    "Repitition-19.jpg",
+    "Repitition-20.jpg",
+    "Repitition-21.jpg",
+    "Repitition-22.jpg",
+  ]
+
+
+  let i = 0;
   for (let [key, value] of Object.entries(picLocations)) {
     let display = BABYLON.MeshBuilder.CreateBox("wall", {
         width: 3,
@@ -97,8 +203,15 @@ let createGameScene = function(canvas, engine) {
     display.position.x = value[0];
     display.position.y = value[1];
     display.position.z = value[2];
-    display.material = displayImage;
     display.rotation = new BABYLON.Vector3(0, value[3], 0);//(3*Math.PI)/2, 0);
+
+
+    console.log(i);
+    let displayImage = new BABYLON.StandardMaterial("material", scene);
+    displayImage.diffuseTexture = new BABYLON.Texture(images[i], scene);
+    display.material = displayImage;
+    i++;
+  
 
     display.actionManager = new BABYLON.ActionManager(scene);
     
@@ -117,16 +230,27 @@ let createGameScene = function(canvas, engine) {
 
 
   ////   THE CUBE   ////
+  var glass = new BABYLON.PBRMaterial("glass", scene);
+  glass.indexOfRefraction = 0.52;
+  glass.alpha = 0.5;
+  glass.directIntensity = 0.0;
+  glass.environmentIntensity = 0.7;
+  glass.cameraExposure = 0.66;
+  glass.cameraContrast = 1.66;
+  glass.microSurface = 1;
+  glass.reflectivityColor = new BABYLON.Color3(0.2, 0.2, 0.2);
+  glass.albedoColor = new BABYLON.Color3(0.95, 0.95, 0.95);
+
   BABYLON.SceneLoader.ImportMesh("", "./Assets/Models/", "realmap.glb", scene, (meshes) => {
 
     for (let i=0; i<meshes.length; i++) {
       meshes[i].checkCollisions = true;
-
+      if (meshes[i].name == "Glass") {
+        console.log("GLASS!");
+        meshes[i].material = glass;
+      }
     }
-    
   });
-
-
 
 
 
@@ -137,13 +261,6 @@ let createGameScene = function(canvas, engine) {
   let cameraYMomentum = 0;
 
   document.addEventListener("keydown", function(event) {
-
-    // MOVE THE CUBE
-    if (event.code == "Enter") {
-      moveCube();
-    }
-    
-
     
     // Jump
     if (event.code == "Space") {
