@@ -35,7 +35,8 @@ const picLocations = [
 ];
 
 const walkSpeed = 1;
-const runSpeed = 8;
+const sprintSpeed = 2;
+const superSprintSpeed = 8;
 
 function animateFOV(camera, start, end, duration) {
   let startTime = performance.now();
@@ -277,9 +278,15 @@ let createGameScene = function(canvas, engine) {
     // Sprint
     if (event.shiftKey && !sprinting) {
       sprinting = true;
-      camera.speed = runSpeed;
+      camera.speed = sprintSpeed;
       animateFOV(camera, 0.8, 1, 200); // Call the animateFOV function to gradually change FOV, (cameraObj, startFOV, endFOV, time in ms)
     };
+
+    if (event.ctrlKey && !sprinting) {
+      sprinting = true;
+      camera.speed = superSprintSpeed;
+      animateFOV(camera, 0.8, 1, 200);
+    }
 
   });
 
