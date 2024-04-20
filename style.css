@@ -274,7 +274,7 @@ html{
   margin-right: 10px;
   border-radius: 10%;
 }
-.select:hover {
+.select:hover:enabled {
   transform: scale(1, 1);
   background-color: #66d9ff;
 }
