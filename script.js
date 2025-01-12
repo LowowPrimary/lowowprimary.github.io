@@ -7,41 +7,28 @@ let backToMainMenu = document.getElementById("backToMainMenu");
 let fullscreened = false;
 
 // ON LOAD ANIMATION
+let startCovers = document.querySelectorAll(".introAnim");
 window.onload = function() {
-
-  document.getElementById("startCover").style.left = "120%";
-  document.getElementById("startCover1").style.left = "120%";
-  document.getElementById("startCover2").style.left = "120%";
-  document.getElementById("startCover3").style.left = "120%";
-
+  startCovers.forEach(function(cover) {
+    cover.style.left = "120%";
+  })
 };
-
 
 let bgLength = document.querySelectorAll(".background").length;
 let bgIndex = 0;
 document.querySelectorAll(".background")[bgIndex].style.opacity = 1;
-
 function bgUpdateTimeout() {
-  
   document.querySelectorAll(".background")[bgIndex].style.opacity = 0;
-
   if (bgIndex+1 > bgLength-1) {
     bgIndex = 0;
   } else {
     bgIndex++;
   }
-
   document.querySelectorAll(".background")[bgIndex].style.opacity = 1;
-  setTimeout(bgUpdateTimeout, 6000);
 }
-
-setTimeout(bgUpdateTimeout, 6000);
-
-
-
+setInterval(bgUpdateTimeout, 6000);
 
 let resumeBtn = document.getElementById("resumeBtn");
-
 let resumePage = document.getElementById("resumePage");
 let aboutMePage = document.getElementById("aboutMePage");
 
@@ -70,16 +57,12 @@ let bTMMBtns = document.querySelectorAll(".backToMainMenu");
 bTMMBtns.forEach(function(button) {
   button.addEventListener("click", function() {
     fullscreened = false;
-    
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  
+    window.scrollTo({ top: 0, behavior: "smooth" });
     setTimeout(function(){
         document.getElementById("DPIPage").style.top = "-100%";
         document.getElementById("GDPage").style.top = "-100%";
-  
         background.style.opacity = "100%";
         menu.style.opacity = "100%";
-  
         document.getElementById("DPIImages").style.display = "none";
         document.getElementById("GDImages").style.display = "none";
     }, 700);
@@ -87,118 +70,91 @@ bTMMBtns.forEach(function(button) {
   });
 });
 
+let sectionsKey = {
+  0: [
+    DPICover,
+    document.getElementById("DPIImages"),
+    document.getElementById("DPIPage")
+  ],
+  1: [
+    GDCover,
+    document.getElementById("GDImages"),
+    document.getElementById("GDPage")
+  ]
+};
 
-
-async function startDPI() {
+let norLoc = [0, 100];
+let invLoc = [100, 0];
+async function startSection(iteration) {
+  let cover = sectionsKey[iteration][0];
+  let images = sectionsKey[iteration][1];
+  let page = sectionsKey[iteration][2];
+  
+  if (fullscreened) {return;}
   fullscreened = true;
 
-  DPICover.style.left = "100%";
-  background.style.opacity = "0%";
-  menu.style.opacity = "0%";
-  DPICover.style.opacity = "0%";
+  cover.style.left = invLoc[iteration] + "%";
 
+  background.style.opacity = "0";
+  menu.style.opacity = "0";
+  cover.style.opacity = "0";
   await new Promise(resolve => setTimeout(resolve, 1000));
-
-  document.getElementById("DPIPage").style.top = "0%";
-
-  let DPIImages = document.getElementById("DPIImages");
-  DPIImages.style.display = "flex";
-
-
+  page.style.top = "0";
+  images.style.display = "flex";
   await new Promise(resolve => setTimeout(resolve, 1000));
+  cover.style.opacity = "100%";
 
-  DPICover.style.opacity = "100%";
-  DPICover.style.left = "0";
-  DPICover.style.transform = "translate(-100%, 0)";
-
+  cover.style.left = norLoc[iteration] + "%";
+  cover.style.transform = "translate(" + (invLoc[iteration]*-1) + "%, 0)";
 }
 
-
-
 document.getElementById("DPIMainPage").addEventListener("click", function() {
-  if (!fullscreened) {
-    startDPI();
-  }
+  startSection(0);
 });
 DPICover.addEventListener("click", function() {
-  if (!fullscreened) {
-    startDPI();
-  }
-});
-document.getElementById("DPIMainPage").addEventListener("mouseenter", function() {
-  if (!fullscreened) {
-    DPICover.style.transform = "translate(0, 0)";
-    background.style.opacity = "0%";
-  } 
+  startSection(0);
 });
 
-DPICover.addEventListener("mouseleave", function() {
-  if (!fullscreened) {
-    DPICover.style.transform = "translate(-100%, 0)";
-    background.style.opacity = "100%";
-  }
-});
+let covers = document.querySelectorAll(".cover");
+for (let i=0; i<covers.length; i++) {
+  covers[i].addEventListener("mouseleave", function() {
+    if (!fullscreened) {
+      covers[i].style.transform = "translate(" + [-100, 0][i] + "%, 0)";
+      background.style.opacity = "100%";
+    }  
+  });
+}
 
-
-
-async function startGD() {
-  fullscreened = true;
-  
-  GDCover.style.left = "0";
-  background.style.opacity = "0%";
-  menu.style.opacity = "0%";
-  GDCover.style.opacity = "0%";
-  
-  await new Promise(resolve => setTimeout(resolve, 1000));
-
-  document.getElementById("GDPage").style.top = "0%";
-
-  let GDImages = document.getElementById("GDImages");
-  GDImages.style.display = "flex";
-
-  await new Promise(resolve => setTimeout(resolve, 1000));
-
-  GDCover.style.opacity = "100%";
-  GDCover.style.left = "100%";
-  GDCover.style.transform = "translate(0, 0)";
-
+let tContainers = document.querySelectorAll(".tContainer");
+for (let i=0; i<tContainers.length; i++) {
+  tContainers[i].addEventListener("mouseenter", function() {
+    if (!fullscreened) {
+      covers[i].style.transform = "translate(" + [0, -100][i] + "%, 0)";
+      background.style.opacity = "0%";
+    } 
+  });  
 }
 
 document.getElementById("GDMainPage").addEventListener("click", function() {
-  if (!fullscreened) {
-    startGD();
-  }
+  startSection(1);
 });
 GDCover.addEventListener("click", function() {
-  if (!fullscreened) {
-    startGD();    
-  }
+  startSection(1);  
 });
-document.getElementById("GDMainPage").addEventListener("mouseenter", function() {
-  if (!fullscreened) {
-    GDCover.style.transform = "translate(-100%, 0)";
-    background.style.opacity = "0%";
-  }
-});
-
-GDCover.addEventListener("mouseleave", function() {
-  if (!fullscreened) {
-    GDCover.style.transform = "translate(0, 0)";
-    background.style.opacity = "100%";
-  }
-});
-
-
-//tcontainer.addEventListener("", function() {});
-
 
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn")
 const carousel = document.getElementById("carousel");
 let carouselIndex = document.querySelectorAll(".carouselIndex");
-
-const carouselLen = document.querySelectorAll('.carouselObj').length;
-
+// load carousel objects
+for (let i=1; i<36; i++) {
+  let img = document.createElement("img");
+  img.classList.add("carouselObj");
+  img.src = ("./Assets/DP/AbstractAlphabet/AbstractAlphabet-" + i + ".jpg");
+  carousel.appendChild(img);
+}
+let carouselObjects = document.querySelectorAll(".carouselObj");
+const carouselLen = carouselObjects.length;
 
 const abstractAlphabetText = {
   "1": "Apprehension",
@@ -241,50 +197,36 @@ const abstractAlphabetText = {
 let currentIndex = 0;
 carouselIndex[0].textContent = abstractAlphabetText[currentIndex+1] + " - " + (currentIndex+1) + "/" + carouselLen;
 
-
-  
 function updateCarousel(newIndex) {
-
-  console.log(newIndex);
-  document.querySelectorAll('.carouselObj')[currentIndex].style.opacity = 0;
-
+  carouselObjects[currentIndex].style.opacity = 0;
   if (newIndex < 0) {
     newIndex = carouselLen - 1;
-    document.querySelectorAll('.carouselObj')[newIndex].style.opacity = 1;
+    carouselObjects[newIndex].style.opacity = 1;
   } else if (newIndex > carouselLen - 1) {
     newIndex = 0;
-    document.querySelectorAll('.carouselObj')[newIndex].style.opacity = 1;
+    carouselObjects[newIndex].style.opacity = 1;
   } else {
-    document.querySelectorAll('.carouselObj')[newIndex].style.opacity = 1;
+    carouselObjects[newIndex].style.opacity = 1;
   }
-
   currentIndex = newIndex;
   carouselIndex[0].textContent = abstractAlphabetText[currentIndex+1] + " - " + (currentIndex+1) + "/" + carouselLen;
-
 }
 
-document.getElementById("prevBtn").addEventListener("click", function() {
-  updateCarousel(currentIndex-1);
-});
-
-document.getElementById("nextBtn").addEventListener("click", function() {
-  updateCarousel(currentIndex+1);
-});
-
-
+document.getElementById("prevBtn").addEventListener("click", function() {updateCarousel(currentIndex-1);});
+document.getElementById("nextBtn").addEventListener("click", function() {updateCarousel(currentIndex+1);});
 function carouselTimeout() {
   updateCarousel(currentIndex+1);
+}
+setInterval(carouselTimeout, 3000);
 
-  setTimeout(carouselTimeout, 3000);
+const imageDiv = document.getElementById("autoscroller");
+// init autoscroller
+for (let i=1; i<16; i++) {
+  let img = document.createElement("img");
+  img.src = "./Assets/DP/ApeturePriority/ApeturePriority-" + i + ".jpg";
+  autoscroller.appendChild(img);
 }
 
-setTimeout(carouselTimeout, 3000);
-
-
-
-
-
-const imageDiv = document.getElementById('autoscroller');
 let scrollAmount = 0;
 function scrollImages() {
   if (!(imageDiv.matches(":hover"))) {
@@ -298,4 +240,3 @@ function scrollImages() {
   }
 }
 setInterval(scrollImages, 20);
-
