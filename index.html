@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 	<meta charset="utf-8">
-	<title>Portfolio</title>
+	<title>Satraj's Portfolio</title>
 
 	<link href="./style.css" rel="stylesheet" type="text/css" />
-	
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-DRVQ3MDYKJ"></script>
+	<link rel="icon" type="image/png" href="./Assets/Favicon.png" sizes="any">
+
 	<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-DRVQ3MDYKJ');
-	</script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-DRVQ3MDYKJ');
+	</script>	
 </head>
 <body>
 
@@ -68,7 +67,7 @@
 			<img id="DPICover" class="cover" src="./Assets/DP/ApeturePriority/ApeturePriority-5.jpg"> </img>
 		</div>
 
-		<div id="GP">
+		<div id="GD">
 			<div id="GDMainPage" class="tContainer">
 				<div class="mixBlendMode">
 					<p> Graphic Design </p>
@@ -76,7 +75,56 @@
 			</div>
 			<img id="GDCover" class="cover" src="./Assets/GD/TravelPoster.jpg"> </img>
 		</div>
+
+		<div id="Anim">
+			<div id="AnimMainPage" class="tContainer">
+				<div class="mixBlendMode">
+					<p> Animation </p>
+				</div>
+			</div>
+			<video id="AnimCover" class="cover" src="./Assets/Anim/CosmicTrash.mp4" autoplay muted></video>
+		</div>
 	</div>
+
+	<div id="AnimPage">
+		<img src="./Assets/backgroundTexture.jpeg" class="bgImg" />
+		<h1 class="headlineText">Animation</h1>
+
+		<p class="subPageQuote">“Animation can explain whatever the mind of man can conceive. This facility makes it the most versatile and explicit means of communication yet devised for quick mass appreciation.“</p>
+		<p class="subPageQuoteAuthor">-Walt Disney</p>
+	</div>
+	<div id="AnimImages" style="display: none">
+		<div class="image-with-text">
+			<video class="animVideo" src="./Assets/Anim/BouncingBall.mp4" controls></video>
+			<div class="text">
+				<p>The first project that we had animated on a computer was in Adobe After effects, and the requirements were just to demonstrate squash and stretch, show position rotation and scaling in After Effects, and have 3 different objects/shapes. We had training on just a ball bouncing, and I thought to expand that by animating a simple ping pong match, which ends when one paddle gets such a good opportunity for a spike it doesn't realize that the ball hasn't bounced and fouls. I learned how to create smooth, curved animations with easing & simple ways to use squash and stretch to improve the quality of the animation.</p>
+			</div>
+		</div>
+
+		<div class="image-with-text" style="flex-direction: row-reverse;">
+			<video class="animVideo" src="./Assets/Anim/FilmFestival.mp4" controls></video>
+			<div class="text">
+				<p>The Film Festival was an open ended project that only required that you start with a ball and end with a ball, while having the prompt of "24". I couldn't think of anything to do, and was just messing around in Adobe After Effects, and saw how arrays & clones could be used to create interesting animations. So I ended up animating the lines to do different stuff related to 24 while spinning around the central circle. The most difficult part was having the lines erupt from the center, and fall back into tally's that add to 24, because I was using an array and couldn't easily move individual pieces around. I ended just manipulating each individual line to one erupted position keyframe, then 1 final keyframe in the tally, and when easing was applied, it looked like a smooth animation.</p>
+			</div>
+		</div>
+
+		<div class="image-with-text">
+			<video class="animVideo" src="./Assets/Anim/MohoCharacter.mp4" controls></video>
+			<div class="text">
+				<p>The second software that we learned in class was Moho. Moho is a 2D vector-based character animator. We needed to demonstrate the principles of Anticipation & Follow Through, along with using a switch layer. I just made a simple, blocky character to start off with, and started looking around Moho to see what it was capable of. I saw it had some effects, so I added a snowy one. For the switch layer, I thought of using a bored face and a happy face, so I added a flower. A bright flower in the snow is uncommon and surprising, so it all worked out.</p>
+			</div>
+		</div>
+
+		<div class="image-with-text">
+			<video class="animVideo" src="./Assets/Anim/CosmicTrash.mp4" controls></video>
+			<div class="text">
+				<p>The final project that we had done was in Cinema 4D, a 3D animation software. The prompt was just "Cosmic Trash". We had to have a paper bag wadded up, an organic object, and a manmade object. The paper bag and manmade object paired with "Trash" made me think of junk food, so I modeled a drink & a pizza. Then for the cosmic part, I arranged a stary background with some planets & an asteroid belt for a solar system. I was going to just have the camera rotate while moving sideways, but then thought to use the default avatar in C4D to create something more unique, and ended up making a first person animation where the character looks at the too bright sun, hops towards the food, and then watches a star get eaten by a black hole in the distance. Through it, I learned and expanded on easing, node shader editing, modeling, and creating screen effects.</p>
+			</div>
+		</div>
+
+		<div class="backToMainMenu"><b>Back to Main Menu</b></div>
+	</div>
+
 
 	<div id="DPIPage">
 		<img src="./Assets/backgroundTexture.jpeg" class="bgImg" />
@@ -259,7 +307,5 @@
 	<script src="./script.js" type="application/javascript"></script>
 	<script src="./scene.js" type="application/javascript"></script>
 	<script src="./manager.js" type="application/javascript"></script>
-
 </body>
-
 </html>

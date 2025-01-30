@@ -1,12 +1,12 @@
 let DPICover = document.getElementById("DPICover");
 let GDCover = document.getElementById("GDCover");
+let animCover = document.getElementById("AnimCover");
 let background = document.getElementById("theBackgroundCarousel");
 let menu = document.getElementById("menu");
 let backToMainMenu = document.getElementById("backToMainMenu");
 
 let fullscreened = false;
 
-// ON LOAD ANIMATION
 let startCovers = document.querySelectorAll(".introAnim");
 window.onload = function() {
   startCovers.forEach(function(cover) {
@@ -53,20 +53,20 @@ bFSP.addEventListener("click", function() {
 
 
 let bTMMBtns = document.querySelectorAll(".backToMainMenu");
-
-bTMMBtns.forEach(function(button) {
-  button.addEventListener("click", function() {
+bTMMBtns.forEach(function (button) {
+  button.addEventListener("click", function () {
     fullscreened = false;
     window.scrollTo({ top: 0, behavior: "smooth" });
-    setTimeout(function(){
-        document.getElementById("DPIPage").style.top = "-100%";
-        document.getElementById("GDPage").style.top = "-100%";
-        background.style.opacity = "100%";
-        menu.style.opacity = "100%";
-        document.getElementById("DPIImages").style.display = "none";
-        document.getElementById("GDImages").style.display = "none";
+    setTimeout(function () {
+      document.getElementById("DPIPage").style.top = "-100%";
+      document.getElementById("GDPage").style.top = "-100%";
+      document.getElementById("AnimPage").style.top = "-100%";
+      background.style.opacity = "100%";
+      menu.style.opacity = "100%";
+      document.getElementById("AnimImages").style.display = "none";
+      document.getElementById("DPIImages").style.display = "none";
+      document.getElementById("GDImages").style.display = "none";
     }, 700);
-    
   });
 });
 
@@ -80,11 +80,16 @@ let sectionsKey = {
     GDCover,
     document.getElementById("GDImages"),
     document.getElementById("GDPage")
+  ],
+  2: [
+    animCover,
+    document.getElementById("AnimImages"),
+    document.getElementById("AnimPage")
   ]
 };
 
-let norLoc = [0, 100];
-let invLoc = [100, 0];
+let norLoc = [0, 100, 0];
+let invLoc = [100, 0, 0];
 async function startSection(iteration) {
   let cover = sectionsKey[iteration][0];
   let images = sectionsKey[iteration][1];
@@ -94,6 +99,9 @@ async function startSection(iteration) {
   fullscreened = true;
 
   cover.style.left = invLoc[iteration] + "%";
+  if (iteration == 2) {
+    cover.style.top = "-100%";
+  }
 
   background.style.opacity = "0";
   menu.style.opacity = "0";
@@ -104,8 +112,13 @@ async function startSection(iteration) {
   await new Promise(resolve => setTimeout(resolve, 1000));
   cover.style.opacity = "100%";
 
-  cover.style.left = norLoc[iteration] + "%";
-  cover.style.transform = "translate(" + (invLoc[iteration]*-1) + "%, 0)";
+  if (iteration == 2) {
+    cover.style.top = "100%";
+    cover.style.transform = "";
+  } else {
+    cover.style.left = norLoc[iteration] + "%";
+    cover.style.transform = "translate(" + (invLoc[iteration]*-1) + "%, 0)";
+  } 
 }
 
 document.getElementById("DPIMainPage").addEventListener("click", function() {
@@ -114,12 +127,26 @@ document.getElementById("DPIMainPage").addEventListener("click", function() {
 DPICover.addEventListener("click", function() {
   startSection(0);
 });
+document.getElementById("GDMainPage").addEventListener("click", function() {
+  startSection(1);
+});
+GDCover.addEventListener("click", function() {
+  startSection(1);  
+});
+
+document.getElementById("AnimMainPage").addEventListener("click", function() {
+  startSection(2);
+});
+animCover.addEventListener("click", function() {
+  startSection(2);
+});
+
 
 let covers = document.querySelectorAll(".cover");
 for (let i=0; i<covers.length; i++) {
   covers[i].addEventListener("mouseleave", function() {
     if (!fullscreened) {
-      covers[i].style.transform = "translate(" + [-100, 0][i] + "%, 0)";
+      covers[i].style.transform = "translate(" + [-100, 0, 0][i] + "%, 0)";
       background.style.opacity = "100%";
     }  
   });
@@ -129,24 +156,22 @@ let tContainers = document.querySelectorAll(".tContainer");
 for (let i=0; i<tContainers.length; i++) {
   tContainers[i].addEventListener("mouseenter", function() {
     if (!fullscreened) {
-      covers[i].style.transform = "translate(" + [0, -100][i] + "%, 0)";
+      covers[i].style.transform = "translate(" + [0, -100, 0][i] + "%," + [0, 0, -40][i] + "%)";
       background.style.opacity = "0%";
-    } 
-  });  
+    }
+  });
+  tContainers[i].addEventListener("mouseleave", function() {
+    if (!fullscreened && !covers[i].matches(":hover")) {
+      covers[i].style.transform = "translate(" + [-100, 0, 0][i] + "%, 0)";
+      background.style.opacity = "100%";
+    }
+  });
 }
-
-document.getElementById("GDMainPage").addEventListener("click", function() {
-  startSection(1);
-});
-GDCover.addEventListener("click", function() {
-  startSection(1);  
-});
 
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn")
 const carousel = document.getElementById("carousel");
 let carouselIndex = document.querySelectorAll(".carouselIndex");
-// load carousel objects
 for (let i=1; i<36; i++) {
   let img = document.createElement("img");
   img.classList.add("carouselObj");
@@ -220,7 +245,6 @@ function carouselTimeout() {
 setInterval(carouselTimeout, 3000);
 
 const imageDiv = document.getElementById("autoscroller");
-// init autoscroller
 for (let i=1; i<16; i++) {
   let img = document.createElement("img");
   img.src = "./Assets/DP/ApeturePriority/ApeturePriority-" + i + ".jpg";

@@ -1,4 +1,3 @@
-// floor is whether it's floor or roof
 let runButton = document.getElementById("runButton");
 
 let createPointerLock = function (scene) {

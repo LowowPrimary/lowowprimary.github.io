@@ -1,17 +1,21 @@
-/* CSS Document */
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 html{
-    background-color: transparent;/*#211F47; previously gray*/
-    /*padding: 20px;*/
+    background-color: transparent;
     width: 100%;
     height: 100%;
-    overflow-x: hidden; 
+    overflow-x: hidden;
 }
 p {
   color: white;  
 }
-
+#Anim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
+}
 #crosshair {
   display: none;
   background-color: white;
@@ -23,7 +27,6 @@ p {
   height: 20px;
   z-index: 10;
 }
-
 ::-webkit-scrollbar {
   width: 12px;
 }
@@ -35,34 +38,27 @@ p {
   background-color: black;
   outline: 5px solid black;
 }
-
 .bgImg {
   position: absolute; 
-  top: 0; 
-  left: 0; 
-  width: 100%; 
-  height: 100%; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   z-index: -1;
 }
-
 .subPageQuote {
-  position: absolute;
+  margin: 0;
   color: black;
-  font-size: 250%;
-  top: 15%;
-  
+  font-size: 200%;  
   font-family: 'Brush Script MT', cursive;
 }
 .subPageQuoteAuthor {
-  position: absolute;
-  top: 22%;
-  left: 5%;
+  margin-left: 10%;
   color: black;
   font-size: 150%;
   font-weight: bold;
   font-family: sans-serif;
 }
-
 #aboutMeText {
   position: absolute; 
   left: 50%;
@@ -86,7 +82,6 @@ p {
   background-color: #66d9ff;
   transform: scale(1.6);
 }
-
 #aboutMePage {
   display: none;
 }
@@ -98,7 +93,6 @@ p {
   left: 50%; 
   transform: translate(-50%, 0);
 }
-
 #blackCover {
   transition-duration: 1s;
   position: absolute;
@@ -119,7 +113,6 @@ p {
   position: absolute;
   display: none;
 }
-
 .DPIIwT {
   flex-direction: row-reverse;
   display: flex;
@@ -129,7 +122,6 @@ p {
   margin-top: 10%;
   margin-bottom: 40%;
 }
-
 #Repetition {
   display: flex;
   position: absolute;
@@ -140,7 +132,6 @@ p {
   overflow-y: scroll;
   max-height: 15%;
 }
-
 .column {
   flex: 25%;
   padding: 0 4px;
@@ -162,7 +153,6 @@ p {
     max-width: 100%;
   }
 }
-
 #autoscroller {
   align-self: flex-start;
   position: absolute;
@@ -174,13 +164,11 @@ p {
   white-space: nowrap;
   margin: 10px;
 }
-
 #autoscroller > img {
   height: 100%;
   padding-right: 20px;
   padding-left: 20px;
 }
-
 #carousel {
   align-self: flex-start;
   display: flex;
@@ -191,16 +179,13 @@ p {
   background-color: rgba(0,0,0,0.2);
   overflow: hidden;
 }
-
 .DPIText {
   width: 40%;
-
   float: right;
   font-size: 200%;
   padding-left: 20px;
   padding-right: 20px;
 }
-
 #prevBtn {
   position: absolute;
   left: 0;
@@ -221,7 +206,6 @@ p {
   object-fit: cover;
   transition-duration: 1s;
 }
-
 .carouselButton {
   z-index: 1;
   cursor: pointer;
@@ -236,7 +220,6 @@ p {
 .carouselButton:hover {
   background-color: rgba(0,0,0,0.8);
 }
-
 .carouselIndex {
   color: white;
   mix-blend-mode: difference;
@@ -245,7 +228,6 @@ p {
   bottom: -5%;
   z-index: 100;
 }
-
 .select {
   transition: .3s;
   background-color: lightblue;
@@ -257,7 +239,6 @@ p {
   transform: scale(1, 1);
   background-color: #66d9ff;
 }
-
 #dropdown {
   display: flex;
   font-size: 200%;
@@ -267,7 +248,6 @@ p {
   color: white;
   cursor: pointer;
 }
-
 #headlineMenu {
   text-align: center;
   position: absolute;
@@ -275,7 +255,6 @@ p {
   right: 0;
   width: 5%;
 }
-
 #options {
   opacity: 0%;
   position: absolute;
@@ -287,7 +266,6 @@ p {
   transition: all 0.5s;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
-
 #dropdown:hover + #options, #options:hover {
   transition-duration: .5s;
   opacity: 100%;
@@ -296,7 +274,6 @@ p {
 #options:hover > * {
   cursor: pointer;
 }
-
 #headline {
   width: 100%;
   height: 10%;
@@ -307,15 +284,14 @@ p {
   align-content: center;
   z-index: 10;
 }
-
 .headlineText {
+  margin-bottom: 2%;
   font-size: 500%;
   left: 50%;
   outline: 5px solid black;
 }
-
 #menu {transition: 1s;} 
-
+.animVideo {width: 50%;}
 .image-with-text {
   display: flex;
   flex-direction: row;
@@ -328,8 +304,7 @@ p {
   padding-left: 20px;
   padding-right: 20px;
 }
-
-#GDImages, #DPIImages {
+#GDImages, #DPIImages, #AnimImages {
   position: absolute;
   top: 100%;
   left: 0;
@@ -337,8 +312,7 @@ p {
   height: fit-content;
   flex-direction: column;
 }
-
-#DPIPage, #GDPage {
+#DPIPage, #GDPage, #AnimPage {
   flex-direction: column;
   position: absolute;
   width: 100%;
@@ -348,7 +322,6 @@ p {
   left: 0;
   background-color: transparent;
 }
-
 .background {
   display: flex;
   height: 100%;
@@ -359,7 +332,6 @@ p {
   left: 50%;
   transform: translate(-50%, 0%);
 }
-
 @keyframes coolShadeThingy { 
   0% {color: white;}
   40% {color: gray;}
@@ -373,7 +345,6 @@ p {
   3px 3px 0 #000;  
   animation: coolShadeThingy 2s linear infinite;
 }
-
 #Title > * {
   margin: 5px 0;
 }
@@ -389,7 +360,6 @@ p {
   font-size: 28px;
   font-family: 'Times New Roman', Times, serif;
 }
-
 #DPIMainPage {
   display: flex;
   border: 1px solid white;
@@ -415,16 +385,25 @@ p {
   background: transparent;
   transition-duration: .3s;
 }
-
-#DPIMainPage:hover, #GDMainPage:hover {
+#AnimMainPage {
+  display: flex;
+  border: 1px solid white;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  top: 85%;
+  left: 47%;
+  z-index: 10;
+  background: transparent;
+  transition-duration: .3s;
+}
+#DPIMainPage:hover, #GDMainPage:hover, #AnimMainPage:hover {
   transform: scale(1.3);
 }
-
 .mixBlendMode {
   mix-blend-mode: difference;
   cursor: pointer;
 }
-
 #DPICover {
   top: 0;
   left: 0;
@@ -434,7 +413,12 @@ p {
   top: 0;
   left: 100%;
 }
-
+#AnimCover {
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: auto !important;
+}
 .cover {
   display: flex;
   transition-duration: 1s;
@@ -443,19 +427,16 @@ p {
   z-index: 0;
   position: absolute;
 }
-
 .tContainer {
   border: 1px solid white;
   position: absolute;
   z-index: 10;
 }
-
 .fullScreened {
   transition: 1s;
   height: 100%;
   background-color: white;
 }
-
 .backToMainMenu {
   display: block;
   background-color: #8be7f9;
@@ -477,7 +458,6 @@ p {
   background-color: #66e6ff;
   cursor: pointer;
 }
-
 .introAnim {
   transition: 2s;
   width: 100%;
@@ -488,7 +468,6 @@ p {
   overflow: hidden;
   z-index: 10;
 }
-
 @keyframes rotateLoader { 
   0% {
     transform: rotate(0deg); 

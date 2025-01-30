@@ -1,6 +1,3 @@
-// x, y, z, rotation
-// N:Math.PI   E:(3(Math.PI)/2)   S:0   W:(Math.PI/2)
-// please, github, update scene.js
 const directionKey = {
   "N": Math.PI,
   "E": (3 * Math.PI) / 2,
@@ -57,7 +54,7 @@ function animateFOV(camera, start, end, duration) {
 let createGameScene = function(canvas, engine) {
   const scene = new BABYLON.Scene(engine);
   const earthGravity = -9.81;
-  scene.gravity = new BABYLON.Vector3(0, earthGravity / 60, 0); // 60 is (assumed) fps
+  scene.gravity = new BABYLON.Vector3(0, earthGravity / 60, 0);
   scene.enablePhysics(scene.gravity, new BABYLON.CannonJSPlugin());
   scene.clearColor = new BABYLON.Color3(0, .3, .5);
   const camera = new BABYLON.UniversalCamera("UniversalCamera", new BABYLON.Vector3(-10, 7, -38), scene);
@@ -81,7 +78,6 @@ let createGameScene = function(canvas, engine) {
   
   let light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(20,  -20, -20), scene);
 
-  // THE IMAGES
   let easingFunction = new BABYLON.SineEase();
   easingFunction.setEasingMode(BABYLON.EasingFunction.EASINGMODE_EASEINOUT);
   var increaseAnimation = new BABYLON.Animation("increaseAnimation", "scaling", 30, BABYLON.Animation.ANIMATIONTYPE_VECTOR3, BABYLON.Animation.ANIMATIONLOOPMODE_CYCLE);
@@ -135,7 +131,6 @@ let createGameScene = function(canvas, engine) {
     }));
   }
 
-  ////   THE CUBE   ////
   var glass = new BABYLON.PBRMaterial("glass", scene);
   glass.indexOfRefraction = 0.52;
   glass.alpha = 0.5;
@@ -157,13 +152,11 @@ let createGameScene = function(canvas, engine) {
     }
   });
 
-  ////   JUMPING AND SPRINTING   ////
   let jumping = false;
   let sprinting = false;
   let cameraYMomentum = 0;
 
   document.addEventListener("keydown", function(event) {
-    // Jump
     if (event.code == "Space") {
       if (!jumping) {
         cameraYMomentum = .35;
@@ -171,11 +164,10 @@ let createGameScene = function(canvas, engine) {
         jumping = true;
       };
     };
-    // Sprint
     if (event.shiftKey && !sprinting) {
       sprinting = true;
       camera.speed = sprintSpeed;
-      animateFOV(camera, 0.8, 1, 200); // Call the animateFOV function to gradually change FOV, (cameraObj, startFOV, endFOV, time in ms)
+      animateFOV(camera, 0.8, 1, 200);
     };
     if (event.keyCode == 76 && !sprinting) {
       sprinting = true;
@@ -185,7 +177,6 @@ let createGameScene = function(canvas, engine) {
   });
 
   document.addEventListener("keyup", function(event) {
-    // Cancel Sprint
     if (sprinting && !event.shiftKey) {
       sprinting = false;
       camera.speed = walkSpeed;
